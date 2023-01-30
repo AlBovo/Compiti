@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.*
-class CalculateMCMKtTest{
+internal class CalculateMCMKtTest{
     @Test
     fun singleValueCannotBeZero(){
         assertThrows<IllegalArgumentException> {calculateMCM(0, 10)}
