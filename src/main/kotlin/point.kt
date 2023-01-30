@@ -31,5 +31,4 @@ class Point{
     fun calculateDistance(point: Point): Double {
         return sqrt(((point.x - x)*(point.x - x)) + ((point.y-y)*(point.y-y)))
     }
-    fun 
 }
