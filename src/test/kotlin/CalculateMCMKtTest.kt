@@ -36,4 +36,10 @@ class CalculateMCMKtTest{
         var expected = 35
         Assertions.assertEquals(expected, calculateMCM(5, 7))
     }
+
+    @Test
+    fun bothNumbersAreEquals(){
+        var expected = 42
+        Assertions.assertEquals(expected, calculateMCM(42, 42))
+    }
 }
