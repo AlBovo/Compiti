@@ -31,9 +31,3 @@ class Account{
         println("You now have $balance€")
     }
 }
-
-fun main(){
-    var account = Account()
-    account.balance = 0.0
-    account.deposit(40.0)
-}
