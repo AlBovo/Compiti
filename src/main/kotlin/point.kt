@@ -1,7 +1,5 @@
 import kotlin.math.*
-class Point{
-    var x = 0.0
-    var y = 0.0
+class Point(var x: Double, var y: Double){
     fun isOnTheOrigin(): Boolean {
         return x == 0.0 && y == 0.0
     }
