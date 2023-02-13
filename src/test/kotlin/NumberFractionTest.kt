@@ -7,6 +7,14 @@ class NumberFractionTest{
     }
 
     @Test
+    fun cannotChangeDenominatorValueToZero(){
+        assertThrows<IllegalArgumentException> {
+            var number = NumberFraction(4, 2)
+            number.denominator = 0
+        }
+    }
+
+    @Test
     fun canHavePositiveProduct(){
         val expected = true
         val number = NumberFraction(11, 8)
