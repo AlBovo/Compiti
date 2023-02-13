@@ -1,14 +1,8 @@
 import kotlin.math.*
 class Point(var x: Double, var y: Double){
-    fun isOnTheOrigin(): Boolean {
-        return x == 0.0 && y == 0.0
-    }
-    fun findIfItsOnTheAxisX(): Boolean {
-        return x == 0.0
-    }
-    fun findIfItsOnTheAxisY(): Boolean {
-        return y == 0.0
-    }
+    fun isOnTheOrigin(): Boolean = (x == 0.0 && y == 0.0)
+    fun findIfItsOnTheAxisX(): Boolean = (x == 0.0)
+    fun findIfItsOnTheAxisY(): Boolean = (y == 0.0)
     fun findTheQuadrant(): Int {
         require(x != 0.0) {
             "X cannot be on the axis (value : 0.0)"
@@ -26,7 +20,5 @@ class Point(var x: Double, var y: Double){
             4
         }
     }
-    fun calculateDistance(point: Point): Double {
-        return sqrt(((point.x - x)*(point.x - x)) + ((point.y-y)*(point.y-y)))
-    }
+    fun calculateDistance(point: Point): Double = sqrt(((point.x - x)*(point.x - x)) + ((point.y-y)*(point.y-y)))
 }
