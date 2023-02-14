@@ -81,4 +81,22 @@ class NumberFractionTest{
         val number = NumberFraction(-4, 1)
         Assertions.assertEquals(expected, number.isPositive())
     }
+
+    @Test
+    fun numbersAreEquals(){
+        val expected = true
+        val number = NumberFraction(8, 16)
+        val secondNumber = NumberFraction(1, 2)
+        number.reduce()
+        Assertions.assertEquals(expected, number.isEqual(secondNumber))
+    }
+
+    @Test
+    fun numbersArentEquals(){
+        val expected = false
+        val number = NumberFraction(3, 15)
+        val secondNumber = NumberFraction(1, 6)
+        number.reduce()
+        Assertions.assertEquals(expected, number.isEqual(secondNumber))
+    }
 }
