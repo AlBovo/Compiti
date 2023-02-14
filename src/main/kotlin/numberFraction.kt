@@ -15,7 +15,7 @@ class NumberFraction(var numerator: Int, denominatorValue: Int){
     fun sum(numberSecond: NumberFraction) = NumberFraction(numerator*numberSecond.denominator + numberSecond.numerator * denominator, denominator*numberSecond.denominator)
     fun isPositive() = (denominator * numerator >= 0)
     fun isEqual(numberSecond: NumberFraction) = (numerator == numberSecond.numerator && denominator == numberSecond.denominator)
-    fun GCD(numberFirst: Int, numberSecond: Int): Int {
+    fun calculateGCD(numberFirst: Int, numberSecond: Int): Int {
         require(numberFirst > 0 && numberSecond > 0){
             "The number must be positive"
         }
@@ -36,7 +36,7 @@ class NumberFraction(var numerator: Int, denominatorValue: Int){
         return gcd
     }
     fun reduce(){
-        val gcd = GCD(numerator, denominator)
+        val gcd = calculateGCD(numerator, denominator)
         numerator /= gcd
         denominator /= gcd
     }
