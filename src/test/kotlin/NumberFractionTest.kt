@@ -47,7 +47,7 @@ class NumberFractionTest{
         val number = NumberFraction(4, 2)
         val numberSecond = NumberFraction(2, 4)
         val numberThird = number.sum(numberSecond)
-        Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(20, 8)))
+        Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(5, 2)))
     }
 
     @Test
@@ -56,7 +56,7 @@ class NumberFractionTest{
         val number = NumberFraction(-4, 2)
         val numberSecond = NumberFraction(-2, 4)
         val numberThird = number.sum(numberSecond)
-        Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(-20, 8)))
+        Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(-5, 2)))
     }
 
     @Test
@@ -65,7 +65,7 @@ class NumberFractionTest{
         val number = NumberFraction(0, 2)
         val numberSecond = NumberFraction(0, 4)
         val numberThird = number.sum(numberSecond)
-        Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(0, 8)))
+        Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(0, 1)))
     }
 
     @Test
