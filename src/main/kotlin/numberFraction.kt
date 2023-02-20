@@ -1,5 +1,3 @@
-import java.awt.font.NumericShaper
-
 class NumberFraction(var numerator: Int, denominatorValue: Int){
     var denominator = denominatorValue
         set(value){
@@ -13,10 +11,22 @@ class NumberFraction(var numerator: Int, denominatorValue: Int){
                 "The denominator must be different from 0"
             }
         }
-    fun product(numberSecond: NumberFraction) = NumberFraction(numerator * numberSecond.numerator, denominator * numberSecond.denominator).reduce()
-    fun sum(numberSecond: NumberFraction) = NumberFraction(numerator*numberSecond.denominator + numberSecond.numerator * denominator, denominator*numberSecond.denominator).reduce()
+    fun product(number: NumberFraction): NumberFraction{
+        val numberSecond = reduce(number)
+        reduceCurrentFraction()
+        return reduce(NumberFraction(numerator * numberSecond.numerator, denominator * numberSecond.denominator))
+    }
+    fun sum(number: NumberFraction): NumberFraction{
+        val numberSecond = reduce(number)
+        reduceCurrentFraction()
+        return reduce(NumberFraction(numerator*numberSecond.denominator + numberSecond.numerator * denominator, denominator*numberSecond.denominator))
+    }
+    fun isEqual(number: NumberFraction): Boolean {
+        val numberSecond = reduce(number)
+        reduceCurrentFraction()
+        return numerator == numberSecond.numerator && denominator == numberSecond.denominator
+    }
     fun isPositive() = (denominator * numerator >= 0)
-    fun isEqual(numberSecond: NumberFraction) = (numerator == numberSecond.numerator && denominator == numberSecond.denominator)
     fun calculateGCD(numberFirst: Int, numberSecond: Int): Int {
         require(numberSecond != 0){
             "The number must be positive"
@@ -37,10 +47,15 @@ class NumberFraction(var numerator: Int, denominatorValue: Int){
         }
         return gcd
     }
-    fun reduce(): NumberFraction{
+    fun reduce(numberFraction: NumberFraction): NumberFraction{
+        val gcd = calculateGCD(numberFraction.numerator, numberFraction.denominator)
+        numberFraction.numerator /= gcd
+        numberFraction.denominator /= gcd
+        return numberFraction
+    }
+    fun reduceCurrentFraction(){
         val gcd = calculateGCD(numerator, denominator)
         numerator /= gcd
         denominator /= gcd
-        return NumberFraction(numerator, denominator)
     }
 }
