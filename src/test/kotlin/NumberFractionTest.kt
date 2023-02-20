@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.*
 
-class NumberFractionTest{
+internal class NumberFractionTest{
     @Test
     fun cannotHaveZeroDenominator(){
         assertThrows<IllegalArgumentException> { NumberFraction(3, 0) }
@@ -87,7 +87,7 @@ class NumberFractionTest{
         val expected = true
         val number = NumberFraction(8, 16)
         val secondNumber = NumberFraction(1, 2)
-        number.reduce()
+        number.reduceCurrentFraction()
         Assertions.assertEquals(expected, number.isEqual(secondNumber))
     }
 
@@ -96,7 +96,7 @@ class NumberFractionTest{
         val expected = false
         val number = NumberFraction(3, 15)
         val secondNumber = NumberFraction(1, 6)
-        number.reduce()
+        number.reduceCurrentFraction()
         Assertions.assertEquals(expected, number.isEqual(secondNumber))
     }
 }
