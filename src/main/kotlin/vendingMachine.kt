@@ -15,6 +15,12 @@ class VendingMachine(price: Double, quantity: Int){
                 }
                 return field
             }
+            init{
+                require(priceInitial > 0.0){
+                    "The new price must be positive"
+                }
+                price = priceInitial
+            }
         var quantity = quantityInitial
             set(value){
                 require(value > 0){
@@ -27,6 +33,12 @@ class VendingMachine(price: Double, quantity: Int){
                     "The number must be positive"
                 }
                 return field
+            }
+            init{
+                require(quantity > 0){
+                    "The new number must be positive"
+                }
+                quantity = quantityInitial
             }
     }
     private var statusBroken = false

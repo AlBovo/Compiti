@@ -89,5 +89,43 @@ class VendingMachineTest{
         val machine = VendingMachine(32.1, 20)
         assertThrows<IllegalArgumentException> { machine.getRest(10.0) }
     }
-
+    @Test
+    fun theMachineCannotSellTooMuchSnacks(){
+        val machine = VendingMachine(3.1, 1)
+        machine.updateStatus(true)
+        machine.addMoney(40.0)
+        repair(machine)
+        assertThrows<IllegalArgumentException> { machine.buySnack(2) }
+    }
+    @Test
+    fun theMachineCannotSellSnackIfNotEnoughMoney(){
+        val machine = VendingMachine(400.1, 1)
+        machine.updateStatus(true)
+        machine.addMoney(40.0)
+        repair(machine)
+        assertThrows<IllegalArgumentException> { machine.buySnack(1) }
+    }
+    @Test
+    fun theMachineCannotHaveNegativeQuantityOfSnacks(){
+        assertThrows<IllegalArgumentException> { val machine = VendingMachine(20.1, -2) }
+    }
+    @Test
+    fun theMachineCannotHaveNegativePriceOfSnacks(){
+        assertThrows<IllegalArgumentException> { val machine = VendingMachine(-20.1, 2) }
+    }
+    @Test
+    fun theMachineCannotAddNegativeAmount(){
+        val machine = VendingMachine(20.1, 2)
+        machine.updateStatus(true)
+        assertThrows<IllegalArgumentException> { machine.addMoney(-13.0) }
+    }
+    @Test
+    fun theMachineCannotBuyNegativeQuantityOfSnacks(){
+        val machine = VendingMachine(20.1, 2)
+        machine.updateStatus(true)
+        machine.addMoney(30.0)
+        repair(machine)
+        assertThrows<IllegalArgumentException> { machine.buySnack(-3) }
+    }
+    
 }
