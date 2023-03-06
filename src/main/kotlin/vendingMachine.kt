@@ -32,7 +32,7 @@ class VendingMachine(price: Double, quantity: Int){
     private var statusBroken = false
     private val product = Product(price, quantity)
     private var amount = 0.0
-    private var status: Boolean = false
+    private var status = false
     fun addMoney(money: Double){
         require(!statusBroken && status){
             "The vending machine cannot be broken or turned off"
@@ -43,8 +43,7 @@ class VendingMachine(price: Double, quantity: Int){
         amount += money
         vendingMachineIsNowBroken()
         if(statusBroken){
-            print("Now the vending machine is broken, please repair it")
-            return
+            println("Now the vending machine is broken, please repair it")
         }
     }
     fun getRest(money: Double){
@@ -57,16 +56,15 @@ class VendingMachine(price: Double, quantity: Int){
         amount -= money
         vendingMachineIsNowBroken()
         if(statusBroken){
-            print("Now the vending machine is broken, please repair it")
-            return
+            println("Now the vending machine is broken, please repair it")
         }
     }
     fun getCurrentQuantityOfMoney(): Double{
         return amount
     }
     fun updateStatus(newStatus: Boolean){
-        require(!statusBroken && status){
-            "The vending machine cannot be broken or turned off"
+        require(!statusBroken){
+            "The vending machine cannot be broken"
         }
         require(newStatus != status){
             if(status){
@@ -77,53 +75,50 @@ class VendingMachine(price: Double, quantity: Int){
             }
         }
         status = newStatus
-        vendingMachineIsNowBroken()
-        if(statusBroken){
-            print("Now the vending machine is broken, please repair it")
-            return
-        }
     }
     fun vendingMachineIsOn(): Boolean{
         return status
     }
     fun vendingMachineIsNowBroken(brokeNow: Boolean = false){
         require(status){
-            "The machine must be turned off"
+            "The machine cannot be turned off"
         }
         if(brokeNow){
             status =  false
             statusBroken = true
             return
         }
-        val newStatus = Random.nextBits(1) == 1
-        if(status){
-            status =  !status
+        val newStatus = Random.nextInt(2) == 1
+        if(newStatus){
+            status =  false
             statusBroken = true
         }
     }
     fun repairVendingMachine(){
-        require(statusBroken && !status){
+        require(statusBroken){
             "The vending machine must be broken"
         }
-        statusBroken = !statusBroken
+        statusBroken = false
     }
     fun buySnack(quantity: Int){
         require(!statusBroken && status){
             "The vending machine cannot be broken or turned off"
         }
-        require(amount > product.price){
+        require(amount >= product.price*quantity){
             "You cannot buy a snack if you don't have enough money"
         }
         require(product.quantity > 0 && quantity <= product.quantity && quantity > 0){
             "You cannot buy a snack if it doesn't exit"
         }
-        amount -= product.price
-        product.price--
+        amount -= product.price*quantity
+        product.quantity -= quantity
         vendingMachineIsNowBroken()
         if(statusBroken){
-            print("Now the vending machine is broken, please repair it")
-            return
+            println("Now the vending machine is broken, please repair it")
         }
+    }
+    fun isBroken(): Boolean{
+        return statusBroken
     }
     fun getSnackPrice(): Double{
         return product.price

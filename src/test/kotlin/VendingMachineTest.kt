@@ -1,5 +1,11 @@
 import org.junit.jupiter.api.*
 class VendingMachineTest{
+    private fun repair(machine: VendingMachine){
+        if(machine.isBroken()){
+            machine.repairVendingMachine()
+            machine.updateStatus(true)
+        }
+    }
     @Test
     fun theMachineMustBeOffAtTheStart(){
         val machine = VendingMachine(10.0, 30)
@@ -11,6 +17,7 @@ class VendingMachineTest{
         val machine = VendingMachine(10.2, 30)
         val expected = true
         machine.updateStatus(true)
+        repair(machine)
         Assertions.assertEquals(expected, machine.vendingMachineIsOn())
     }
     @Test
@@ -24,12 +31,16 @@ class VendingMachineTest{
         val expected = 10.0
         machine.updateStatus(true)
         machine.addMoney(10.0)
+        repair(machine)
         Assertions.assertEquals(expected, machine.getCurrentQuantityOfMoney())
     }
     @Test
     fun theMachineCannotBeOffBeforeGettingRest(){
         val machine = VendingMachine(12.4, 30)
+        machine.updateStatus(true)
         machine.addMoney(30.0)
+        repair(machine)
+        machine.updateStatus(false)
         assertThrows<IllegalArgumentException> { machine.getRest(10.0) }
     }
     @Test
@@ -38,7 +49,9 @@ class VendingMachineTest{
         val expected = 10.0
         machine.updateStatus(true)
         machine.addMoney(20.0)
+        repair(machine)
         machine.getRest(10.0)
+        repair(machine)
         Assertions.assertEquals(expected, machine.getCurrentQuantityOfMoney())
     }
     @Test
@@ -46,7 +59,9 @@ class VendingMachineTest{
         val machine = VendingMachine(1.3, 30)
         machine.updateStatus(true)
         machine.addMoney(10.0)
+        repair(machine)
         machine.updateStatus(false)
+        repair(machine)
         assertThrows<IllegalArgumentException> { machine.buySnack(3) }
     }
     @Test
@@ -56,9 +71,11 @@ class VendingMachineTest{
         val expectedSecond = 10.0 - 2.3*4
         machine.updateStatus(true)
         machine.addMoney(10.0)
+        repair(machine)
         machine.buySnack(4)
+        repair(machine)
         Assertions.assertEquals(expected, machine.getSnackQuantity())
-        Assertions.assertEquals(expected, machine.getCurrentQuantityOfMoney())
+        Assertions.assertEquals(expectedSecond, machine.getCurrentQuantityOfMoney())
     }
     @Test
     fun theMachineCannotBeBrokenBeforeAddingMoney(){
