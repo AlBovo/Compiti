@@ -127,5 +127,6 @@ class VendingMachineTest{
         repair(machine)
         assertThrows<IllegalArgumentException> { machine.buySnack(-3) }
     }
-    
+    @Test
+
 }

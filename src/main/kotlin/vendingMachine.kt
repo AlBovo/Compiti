@@ -138,10 +138,10 @@ class VendingMachine(price: Double, quantity: Int){
     fun getSnackQuantity(): Int{
         return product.quantity
     }
-    fun addQuantity(quantity: Int){
-
+    fun updateQuantity(quantity: Int){
+        product.quantity = quantity
     }
     fun updateSnackPrice(newPrice: Double){
-
+        product.price = newPrice
     }
 }
