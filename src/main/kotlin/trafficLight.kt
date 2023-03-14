@@ -1,9 +1,6 @@
-class TrafficLight(private val type: Int){
+class TrafficLight(val type: Int){
     var status: Int = 0 // 0: Rosso, 1: Giallo, 2: Verde
         private set(value){
-            require(value in 0..2){
-                "The new status is not correct"
-            }
             when (value) {
                 0 -> {
                     println("Now the color is red")
