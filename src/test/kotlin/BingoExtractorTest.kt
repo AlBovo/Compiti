@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.*
-class BingoTest{
+class BingoExtractorTest{
     @Test
     fun atTheStartTheBagMustNotBeEmpty(){
         val bingo = Bingo()
