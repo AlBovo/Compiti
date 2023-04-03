@@ -24,11 +24,11 @@ class DataStation(array: Array<Int>){
         return mini
     }
     fun media(): Double{
-        var sum = 0
-        for(i in 1 until data.size){
+        var sum = 0.0
+        for(i in data.indices){
             sum += data[i]
         }
-        return sum.toDouble()/data.size.toDouble()
+        return sum/data.size.toDouble()
     }
     fun distinct(): Array<Int>{
         val numbersFound = MutableList(0){0}
