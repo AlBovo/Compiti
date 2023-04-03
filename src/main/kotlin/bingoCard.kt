@@ -1,4 +1,3 @@
-
 class BingoCard(private val listCardByRow: Array<Int>){
     private var numberExtracted = Array<Boolean>(91) { false }
     init{
