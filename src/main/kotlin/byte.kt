@@ -9,7 +9,6 @@ class Byte(val byte: Array<Int>){
                 "A bit can only be 0 or 1"
             }
         }
-        byte.reverse()
     }
     fun toInt(): Int{
         var value = 0
@@ -25,10 +24,8 @@ class Byte(val byte: Array<Int>){
         var carry = 0
         for(i in 7 downTo 0){
             thirdByte[i] += (byte[i] + secondByte.byte[i] + carry) % 2
-            println((byte[i] + secondByte.byte[i] + carry))
             carry = (byte[i] + secondByte.byte[i]) / 2
         }
-        thirdByte.forEach{i -> print(i)}
         check(carry == 0) {
             "Error Overflow"
         }

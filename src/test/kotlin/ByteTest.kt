@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.*
+import java.lang.IllegalStateException
+
 // Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class ByteTest{
     @Test
@@ -49,5 +51,11 @@ class ByteTest{
         val expected = arrayOf(1, 1, 0, 1, 0, 1, 0, 1)
         val expected2 = true
         Assertions.assertEquals(expected2, firstByte.sum(secondByte).byte.contentEquals(expected))
+    }
+    @Test
+    fun sumOverflow(){
+        val firstByte = Byte(Array(8){ 1 })
+        val secondByte = Byte(Array(8){ 1 })
+        assertThrows<IllegalStateException> { firstByte.sum(secondByte) }
     }
 }
