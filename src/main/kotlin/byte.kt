@@ -1,5 +1,5 @@
 // Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
-class Byte(private val byte: Array<Int>){
+class Byte(val byte: Array<Int>){
     init{
         require(byte.size == 8){
             "A byte must contains 8 bit"
@@ -20,16 +20,19 @@ class Byte(private val byte: Array<Int>){
         }
         return value
     }
-    fun sum(secondByte: Array<Int>): Int = toIntPrivate(secondByte) + toIntPrivate(byte)
-    fun isOdd(): Boolean = byte[0] == 1
-
-    private fun toIntPrivate(secondByte: Array<Int>): Int{
-        var value = 0
-        var powValue = 1
-        for(i in 0..7){
-            value += secondByte[i] * powValue
-            powValue *= 2
+    fun sum(secondByte: Byte): Byte {
+        val thirdByte = arrayOf(0, 0, 0, 0, 0, 0, 0, 0)
+        var carry = 0
+        for(i in 7 downTo 0){
+            thirdByte[i] += (byte[i] + secondByte.byte[i] + carry) % 2
+            println((byte[i] + secondByte.byte[i] + carry))
+            carry = (byte[i] + secondByte.byte[i]) / 2
         }
-        return value
+        thirdByte.forEach{i -> print(i)}
+        check(carry == 0) {
+            "Error Overflow"
+        }
+        return Byte(thirdByte)
     }
+    fun isOdd(): Boolean = byte[0] == 1
 }

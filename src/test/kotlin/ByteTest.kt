@@ -37,17 +37,17 @@ class ByteTest{
     @Test
     fun sumOfTwoEqualsBytesIsCorrect(){
         val firstByte = Byte(arrayOf(0, 1, 1, 0, 1, 0, 1, 0)) // 01101010
-        val secondByte = arrayOf(0, 1, 1, 0, 1, 0, 1, 0) // 01101010
-        secondByte.reverse()
-        val expected = 212
-        Assertions.assertEquals(expected, firstByte.sum(secondByte))
+        val secondByte = Byte(arrayOf(0, 1, 1, 0, 1, 0, 1, 0)) // 01101010
+        val expected = arrayOf(1, 1, 0, 1, 0, 1, 0, 0)
+        val expected2 = true
+        Assertions.assertEquals(expected2, firstByte.sum(secondByte).byte.contentEquals(expected))
     }
     @Test
     fun sumOfTwoDifferentBytesIsCorrect(){
         val firstByte = Byte(arrayOf(0, 1, 1, 0, 1, 0, 1, 0)) // 01101010
-        val secondByte = arrayOf(0, 1, 1, 0, 1, 0, 1, 1) // 01101011
-        secondByte.reverse()
-        val expected = 213
-        Assertions.assertEquals(expected, firstByte.sum(secondByte))
+        val secondByte = Byte(arrayOf(0, 1, 1, 0, 1, 0, 1, 1)) // 01101011
+        val expected = arrayOf(1, 1, 0, 1, 0, 1, 0, 1)
+        val expected2 = true
+        Assertions.assertEquals(expected2, firstByte.sum(secondByte).byte.contentEquals(expected))
     }
 }
