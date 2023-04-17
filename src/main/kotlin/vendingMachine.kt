@@ -1,5 +1,4 @@
 import kotlin.random.Random
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class VendingMachine(price: Double, quantity: Int){
     private class Product(priceInitial: Double, quantityInitial: Int){
         var price = priceInitial

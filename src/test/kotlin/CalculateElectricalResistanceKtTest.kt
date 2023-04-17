@@ -1,6 +1,4 @@
 import org.junit.jupiter.api.*
-import java.lang.AssertionError
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 internal class CalculateElectricalResistanceKtTest{
     @Test
     fun cannotHaveVoltageLowerThanZero(){

@@ -1,5 +1,4 @@
 import kotlin.math.pow
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun calculateBMI(weightKG: Double, heightM: Double): String {
     require(weightKG > 0){
         "The weight cannot be negative or equal to 0"

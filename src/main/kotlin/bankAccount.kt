@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class Account{
     var name = ""
     var balance = 0.0

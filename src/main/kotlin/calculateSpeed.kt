@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun calculateSpeed(distanceInMeter: Double, timeInSecond: Double): Double{
     require(distanceInMeter > 0){
         "Distance cannot be lower or equal to 0"

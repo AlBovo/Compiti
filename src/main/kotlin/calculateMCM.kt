@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun calculateMCM(numberFirstVal: Int, numberSecondVal: Int): Int {
     require(numberFirstVal > 0 && numberSecondVal > 0){
         "Both numbers must be different from 0"

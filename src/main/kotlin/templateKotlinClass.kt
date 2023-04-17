@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class BankAccount{
     var name = ""
     get(){

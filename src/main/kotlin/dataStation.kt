@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class DataStation(array: Array<Int>){
     private val data = array
     init{

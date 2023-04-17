@@ -1,5 +1,4 @@
 import kotlin.math.*
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun findIfItsPrime(number: Int): Boolean{
     require(number > 1){
         "The number must be greater than 1"

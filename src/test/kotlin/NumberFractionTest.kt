@@ -1,11 +1,9 @@
 import org.junit.jupiter.api.*
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 internal class NumberFractionTest{
     @Test
     fun cannotHaveZeroDenominator(){
         assertThrows<IllegalArgumentException> { NumberFraction(3, 0) }
     }
-
     @Test
     fun cannotChangeDenominatorValueToZero(){
         assertThrows<IllegalArgumentException> {
@@ -13,7 +11,6 @@ internal class NumberFractionTest{
             number.denominator = 0
         }
     }
-
     @Test
     fun canHavePositiveProduct(){
         val expected = true
@@ -22,7 +19,6 @@ internal class NumberFractionTest{
         val numberThird = number.product(numberSecond)
         Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(55, 32)))
     }
-
     @Test
     fun canHaveNegativeNumerator(){
         val expected = true
@@ -31,7 +27,6 @@ internal class NumberFractionTest{
         val numberThird = number.product(numberSecond)
         Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(-55, 32)))
     }
-
     @Test
     fun canHaveNegativeDenominator(){
         val expected = true
@@ -40,7 +35,6 @@ internal class NumberFractionTest{
         val numberThird = number.product(numberSecond)
         Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(55, -32)))
     }
-
     @Test
     fun canHavePositiveSum(){
         val expected = true
@@ -49,7 +43,6 @@ internal class NumberFractionTest{
         val numberThird = number.sum(numberSecond)
         Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(5, 2)))
     }
-
     @Test
     fun canHaveNegativeSum(){
         val expected = true
@@ -58,7 +51,6 @@ internal class NumberFractionTest{
         val numberThird = number.sum(numberSecond)
         Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(-5, 2)))
     }
-
     @Test
     fun canHaveZeroNumerator(){
         val expected = true
@@ -67,21 +59,18 @@ internal class NumberFractionTest{
         val numberThird = number.sum(numberSecond)
         Assertions.assertEquals(expected, numberThird.isEqual(NumberFraction(0, 1)))
     }
-
     @Test
     fun canHavePositiveFraction(){
         val expected = true
         val number = NumberFraction(3, 1)
         Assertions.assertEquals(expected, number.isPositive())
     }
-
     @Test
     fun canHaveNegativeFraction(){
         val expected = false
         val number = NumberFraction(-4, 1)
         Assertions.assertEquals(expected, number.isPositive())
     }
-
     @Test
     fun numbersAreEquals(){
         val expected = true
@@ -90,7 +79,6 @@ internal class NumberFractionTest{
         number.reduceCurrentFraction()
         Assertions.assertEquals(expected, number.isEqual(secondNumber))
     }
-
     @Test
     fun numbersArentEquals(){
         val expected = false

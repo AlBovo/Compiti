@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class Byte(val byte: Array<Int>){
     init{
         require(byte.size == 8){

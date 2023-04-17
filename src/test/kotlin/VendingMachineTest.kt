@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.*
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class VendingMachineTest{
     private fun repair(machine: VendingMachine){
         if(machine.isBroken()){

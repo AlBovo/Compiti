@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun calculateGCD(numberFirst: Int, numberSecond: Int): Int{
     require(numberFirst > 0 && numberSecond > 0){
         "The number must be positive"

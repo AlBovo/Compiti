@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun isPromoted(insufficiencyNumber: Int, debitPoints: Int): Boolean{
     require(insufficiencyNumber >= 0){
         "The number of insufficiency cannot be negative"

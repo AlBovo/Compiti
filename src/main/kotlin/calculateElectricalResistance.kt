@@ -1,4 +1,3 @@
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun calculateElectricalResistance(voltageInVolts: Double, currentInAmpere: Double): Double{
     require(voltageInVolts >= 0){
         "The voltage cannot be negative"

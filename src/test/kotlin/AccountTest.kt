@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.*
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 internal class AccountTest {
     // tre fasi di test: creare ambiente(account), invocare la funzione e confrontare ciò che ci aspettiamo
     @Test

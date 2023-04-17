@@ -1,5 +1,4 @@
 import kotlin.math.*
-// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class Point(var x: Double, var y: Double){
     fun isOnTheOrigin(): Boolean = (x == 0.0 && y == 0.0)
     fun findIfItsOnTheAxisX(): Boolean = (x == 0.0)
