@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.*
 import kotlin.math.exp
-
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 internal class FindSumOfCharsKtTest{
     @Test
     fun canHaveEveryNumber(){

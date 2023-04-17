@@ -1,4 +1,5 @@
 import kotlin.random.Random
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class Bingo{
     private var numbersExtracted = Array(91) { false }
     fun extractNumber(): Int{

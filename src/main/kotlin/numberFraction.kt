@@ -1,3 +1,4 @@
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class NumberFraction(var numerator: Int, denominatorValue: Int){
     var denominator = denominatorValue
         set(value){

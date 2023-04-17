@@ -1,3 +1,4 @@
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class TrafficLight(val type: Int){
     var status: Int = 0 // 0: Rosso, 1: Giallo, 2: Verde
         private set

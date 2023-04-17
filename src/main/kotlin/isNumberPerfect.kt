@@ -1,3 +1,4 @@
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun isNumberPerfect(number: Int): Boolean{
     require(number > 0){
         "The number must be positive"

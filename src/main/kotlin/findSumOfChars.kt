@@ -1,5 +1,5 @@
 import kotlin.math.abs
-
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun findSumOfChars(number: Int): Int{
     var sum = 0
     var tempNumber = number

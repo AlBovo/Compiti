@@ -1,3 +1,4 @@
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 fun checkTypeOfTriangle(segmentFirst: Double, segmentSecond: Double, segmentThird: Double): Int{
     require(segmentFirst > 0 && segmentSecond > 0 && segmentThird > 0){
         "A segment cannot have negative length"

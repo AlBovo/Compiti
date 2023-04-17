@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.*
+// Q29tcGl0byBEaSBBTEFOIERBVklERSBCT1ZP
 class BingoExtractorTest{
     @Test
     fun atTheStartTheBagMustNotBeEmpty(){
