@@ -1,6 +1,5 @@
 class StringClass(val string: Array<Char>){
     init{
-
         check(string.isNotEmpty()){
             "The string cannot be empty"
         }
