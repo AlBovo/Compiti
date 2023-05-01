@@ -45,9 +45,9 @@ class StringClass(val string: Array<Char>){
         }
         var total = 0
         for(i in string.indices){
-            total += (string[i]-'0')*fastExp(10, string.size-i)
+            total += (string[i]-'0')*fastExp(10, string.size-i-1)
         }
-        return total/10
+        return total
     }
     private fun fastExp(base: Int, exp: Int): Int{
         if(exp == 0){ return 1 }
