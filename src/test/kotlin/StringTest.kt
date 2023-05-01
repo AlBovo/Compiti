@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.*
 
-class StringClassTest{
+class StringTest {
     @Test
     fun twoStringClassAreEqual(){
         val stringClassFirst = StringClass(arrayOf('4','f','2','4','r'))
@@ -25,15 +25,22 @@ class StringClassTest{
     @Test
     fun trimWorksCorrectly(){
         val stringClass = StringClass(arrayOf(' ', ' ', 'f', ' ', 'f', ' ', ' '))
-        val newStringClass = stringClass.trim()
+        val newStringClass = StringClass(stringClass.trim())
         val stringClassExpected = StringClass(arrayOf('f',' ', 'f'))
         val expected = true
         Assertions.assertEquals(expected, newStringClass.equalsTo(stringClassExpected))
     }
     @Test
+    fun trimOnlySpacesStringWorksCorrectly(){
+        val stringClass = StringClass(arrayOf(' ', ' ', ' ', ' ', ' ', ' ', ' '))
+        val newStringClass = stringClass.trim()
+        val expected = true
+        Assertions.assertEquals(expected, newStringClass.isEmpty())
+    }
+    @Test
     fun trimWithNoSpacesDoNothing(){
         val stringClass = StringClass(arrayOf('8', '5', 'f', 'r', 'f', 'f', '2'))
-        val newStringClass = stringClass.trim()
+        val newStringClass = StringClass(stringClass.trim())
         val stringClassExpected = StringClass(arrayOf('8', '5', 'f', 'r', 'f', 'f', '2'))
         val expected = true
         Assertions.assertEquals(expected, newStringClass.equalsTo(stringClassExpected))

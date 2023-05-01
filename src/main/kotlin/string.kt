@@ -1,8 +1,9 @@
-class StringClass(strings: Array<Char>){
-    var string: Array<Char> = arrayOf(' ')
-        private set
+class StringClass(val string: Array<Char>){
     init{
-        string = strings
+
+        check(string.isNotEmpty()){
+            "The string cannot be empty"
+        }
     }
     fun equalsTo(stringParameter: StringClass): Boolean{
         if(stringParameter.string.size == string.size){
@@ -15,10 +16,9 @@ class StringClass(strings: Array<Char>){
         }
         return false
     }
-    fun trim(): StringClass{
-        var positionFirst = 0
-        var positionSecond = 0
-        val array = MutableList<Char>(0){' '}
+    fun trim(): Array<Char>{
+        var positionFirst = -1
+        var positionSecond = -1
         for(i in string.indices){
             if(string[i] != ' '){
                 positionFirst = i
@@ -31,10 +31,14 @@ class StringClass(strings: Array<Char>){
                 break
             }
         }
-        for(i in positionFirst..positionSecond){
-            array.add(string[i])
+        if(positionFirst == -1 && positionSecond == -1){
+            return Array(0){' '}
         }
-        return StringClass(array.toTypedArray())
+        val array = Array<Char>(positionSecond - positionFirst + 1){' '}
+        for(i in positionFirst..positionSecond){
+            array[i-positionFirst] = string[i]
+        }
+        return array
     }
     fun toInt(): Int{
         for(i in string.indices){
