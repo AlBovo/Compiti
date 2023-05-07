@@ -1,5 +1,5 @@
 class Queue(private val size: Int){
-    private var queue = Array<Int>(0){ 0 }
+    private val queue: Array<Int>
     private var queuePointer = 0
     init{
         require(size > 0){
