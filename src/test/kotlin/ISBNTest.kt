@@ -14,7 +14,7 @@ class ISBNTest{
     @Test
     fun get_isbnIsValid(){
         val isbn = ISBN(arrayOf(3, 2, 1, 4, 2, 6, 7, 2, 6))
-        val expected = "3214267264"
-        Assertions.assertEquals(expected, isbn.get())
+        val expected = arrayOf('3', '2', '1', '4', '2', '6', '7', '2', '6', '4')
+        Assertions.assertEquals(true, expected.contentEquals(isbn.get()))
     }
 }
