@@ -1,4 +1,8 @@
-# Compiti
-Questa repository è stata fatta da alcuni studenti della 2H.
-### Studenti
-+ ***Alan Davide Bovo***
+<div align="center">
+    <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png" width="80px"><br>Compiti</h1>
+</div>
+
+This repository contains all the exercise and programs that I made in Kotlin during the school year 2022/2023.<br>
+The repository is made so that it contains in the <code>main</code> directory all the programs/classes that I developed for esercitazioni while in the <code>test</code> directory there are all the unit tests for every software.<br>
+### Altre repository
+- Repository of <a href="https://github.com/Antostarwars/KotlinSchool"><code>@Antostarwars</code></a><br>
