@@ -73,18 +73,19 @@ namespace ConsoleApp_Alea_Iacta_Est
 
                     if (numeroScommesso == winnerNumber) // se il guess è corretto vince 10 volte la scommessa
                     {
+                        Console.WriteLine($"Hai vinto! Il tuo saldo ora è di {saldo}");
                         saldo += 10 * scommessa;
                     }
                     else // se è sbagliato perde la scommessa
                     {
+                        Console.WriteLine($"Hai perso! Il tuo saldo ora è di {saldo}");
                         saldo -= scommessa;
                     }
-                    played = true;
-
-                    if (saldo == 0) // se il saldo è finito esce dal gioco
+                    if(saldo == 0)
                     {
-                        Console.WriteLine("Hai finito il saldo!");
+                        Console.WriteLine("Hai finito il saldo, terminando l'esecuzione del programma ...");
                     }
+                    played = true;
                 }
                 else
                 {
