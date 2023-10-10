@@ -1,5 +1,5 @@
 ﻿/**********************************
- * Alan Davide Bovo 3H 2023-10-03 *
+ * Alan Davide Bovo 3H 2023-10-10 *
  * Lettura e stampa di una string *
  *********************************/
 
@@ -22,8 +22,8 @@ namespace InputData
             double dbInput, height;
             bool inputOK = false;
 
-            Console.Title = "Alan Davide Bovo 3H 2023-10-03";
-            Console.WriteLine("Alan Davide Bovo 3H 2023-10-03");
+            Console.Title = "Alan Davide Bovo 3H 2023-10-10";
+            Console.WriteLine("Alan Davide Bovo 3H 2023-10-10");
 
             #region Lettura e stampa di una stringa
             Console.Write("Input Stringa -> ");

@@ -1,5 +1,5 @@
 ﻿/**********************************
- * Alan Davide Bovo 3H 2023-10-03 *
+ * Alan Davide Bovo 3H 2023-10-10 *
  *      Gioco d'azzardo           *
  *********************************/
 
@@ -13,7 +13,7 @@ namespace ConsoleApp_Alea_Iacta_Est
     {
         static void Main(string[] args)
         {
-            Console.Title = "Alan Davide Bovo 3H 2023-10-03";
+            Console.Title = "Alan Davide Bovo 3H 2023-10-10";
 
             int saldo = 50, scommessa, numeroScommesso, firstNumber, secondNumber, winnerNumber;
             bool played = false, inputOK;
@@ -21,7 +21,7 @@ namespace ConsoleApp_Alea_Iacta_Est
             char inputChar;
             Random random = new Random();
 
-            Console.WriteLine("Alan Davide Bovo 3H 2023-10-03");
+            Console.WriteLine("Alan Davide Bovo 3H 2023-10-10");
             Console.WriteLine("Ciao Giocatore, in questo gioco proverai ad indovinare il numero che sarà la somma di due dadi che tirerai,\n" +
                             "Se lo indovinerai vincerai 10 volte i soldi che avrai puntato altrimenti perderai i soldi puntati.");
             do
