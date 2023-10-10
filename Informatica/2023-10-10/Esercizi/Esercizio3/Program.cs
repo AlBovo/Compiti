@@ -4,6 +4,7 @@ namespace Esercizio3
 {
     internal class Program
     {
+        const int OREINSECONDI = 3600, MINUTIINSECONDI = 60;
         static void Main(string[] args)
         {
             #region Dichiarazione delle variabili
@@ -122,17 +123,18 @@ namespace Esercizio3
             #endregion
 
             #region Calcolo della differenza di orario
-            secondiTotali1 = ore1 * 3600 + minuti1 * 60 + secondi1;
-            secondiTotali2 = ore2 * 3600 + minuti2 * 60 + secondi2;
+            secondiTotali1 = ore1 * OREINSECONDI + minuti1 * MINUTIINSECONDI + secondi1;
+            secondiTotali2 = ore2 * OREINSECONDI + minuti2 * MINUTIINSECONDI + secondi2;
 
             differenza = Math.Abs(secondiTotali2 - secondiTotali1);
+            if (differenza > 12*OREINSECONDI) differenza = 24*OREINSECONDI - differenza;
             #endregion
 
             #region Scrittura dell'orario formattato
-            ore3 = differenza / 3600;
-            differenza %= 3600;
-            minuti3 = differenza / 60;
-            differenza %= 60;
+            ore3 = differenza / OREINSECONDI;
+            differenza %= OREINSECONDI;
+            minuti3 = differenza / MINUTIINSECONDI;
+            differenza %= MINUTIINSECONDI;
             secondi3 = differenza;
 
             Console.WriteLine($"La differenza tra i due orari è di {ore3} ore, {minuti3} minuti e {secondi3} secondi");
