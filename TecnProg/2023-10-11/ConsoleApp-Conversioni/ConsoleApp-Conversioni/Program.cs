@@ -1,5 +1,5 @@
 ﻿/**********************************
- * Alan Davide Bovo 3H 2023-10-03 *
+ * Alan Davide Bovo 3H 2023-10-11 *
  * Conversione da base 10 a 2 e 16*
  *********************************/
 
@@ -13,8 +13,8 @@ namespace ConsoleApp_Conversioni
     {
         static void Main(string[] args)
         {
-            Console.Title = "Alan Davide Bovo 3H 2023-10-10";
-            Console.WriteLine("Alan Davide Bovo 3H 2023-10-10");
+            Console.Title = "Alan Davide Bovo 3H 2023-10-11";
+            Console.WriteLine("Alan Davide Bovo 3H 2023-10-11");
 
             #region Dichiarazione delle variabili
             int numberBase10, tempNumber;
@@ -35,7 +35,7 @@ namespace ConsoleApp_Conversioni
                 }
                 else if(numberBase10 < 0)
                 {
-                    Console.WriteLine("Il numero deve essere maggiore o uguale a 0, riprova ...");
+                    Console.WriteLine("Il numero deve essere maggiore o uguale a 0, riprova ..."); // per ora solo se è maggiore o uguale a 0 va bene
                     inputOK = false;
                 }
             } while (!inputOK);
@@ -45,10 +45,10 @@ namespace ConsoleApp_Conversioni
             tempNumber = numberBase10;
             do
             {
-                numberBase2 += (tempNumber % 2).ToString();
+                numberBase2 += (tempNumber % 2).ToString(); // concateno alla stringa il nuovo numero
                 tempNumber /= 2;
             } while (tempNumber > 0);
-            numberBase2 = new string(numberBase2.ToCharArray().Reverse().ToArray());
+            numberBase2 = new string(numberBase2.ToCharArray().Reverse().ToArray()); // reverso la stringa
             Console.WriteLine($"Il numero inserito in base 2 equivale a : {numberBase2}");
             #endregion
 
@@ -58,18 +58,18 @@ namespace ConsoleApp_Conversioni
             {
                 if (tempNumber % 16 >= 10)
                 {
-                    numberBase16 += (char)((tempNumber % 16) - 10 + 'A');
+                    numberBase16 += (char)((tempNumber % 16) - 10 + 'A'); // se è maggiore di 10 prendo A, B, C, D, E o F
                 }
                 else
                 {
-                    numberBase16 += $"{tempNumber % 16}";
+                    numberBase16 += $"{tempNumber % 16}"; // altrimenti metto il numero come stringa
                 }
 
                 if (tempNumber < 16) break;
 
                 tempNumber /= 16;
             } while (tempNumber > 0);
-            numberBase16 = new string(numberBase16.ToCharArray().Reverse().ToArray());
+            numberBase16 = new string(numberBase16.ToCharArray().Reverse().ToArray()); // reverso la stringa
             Console.WriteLine($"Il numero inserito in base 16 equivale a : {numberBase16}");
             #endregion
 
