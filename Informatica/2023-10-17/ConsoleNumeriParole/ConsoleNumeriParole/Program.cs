@@ -222,6 +222,9 @@ namespace ConsoleNumeriParole
                     #endregion
                 }
             }
+
+            if (number == 0) parola = "zero";
+
             Console.WriteLine("The number as word is: " + parola.Trim());
 
             Console.Write("Press a button to stop the program ... ");
