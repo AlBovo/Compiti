@@ -46,17 +46,15 @@
                 {
                     for (int j = 0; j < copyTerminal[i].Length; j++)
                     {
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         if (copyTerminal[i][j] == ' ' || copyTerminal[i][j] == '\n' || isPrinted[i][j])
                         {
-                            (int, int) pos = Console.GetCursorPosition();
-                            if (copyTerminal[i][j] == '\n')
-                            {
-                                Console.WriteLine();
-                            }
-                            else
-                            {
-                                Console.SetCursorPosition(pos.Item1 + 1, pos.Item2);
-                            }
+                            //(int, int) position = Console.GetCursorPosition();
+                            Console.Write(copyTerminal[i][j]);
+                            //if (copyTerminal[i][j] == '\n')
+                            //    Console.SetCursorPosition(0, position.Item2 + 1);
+                            //else
+                            //    Console.SetCursorPosition(position.Item1 + 1, position.Item2);
                             continue;
                         }
 
@@ -65,19 +63,21 @@
                         if (printChar)
                         {
                             copyTerminal[i][j] = TERMINAL[i][j];
-                            Console.ForegroundColor = ConsoleColor.Blue;
                             isPrinted[i][j] = true;
                         }
                         else
                         {
                             toContinue = true;
                             Console.ForegroundColor = ConsoleColor.White;
-                            copyTerminal[i][j] = (char)rand.Next(33, 255);
+                            do
+                            {
+                                copyTerminal[i][j] = (char)rand.Next(33, 255);
+
+                            } while (copyTerminal[i][j] == '\n' || copyTerminal[i][j] == ' ');
                         }
                         Console.Write(copyTerminal[i][j]);
                     }
                 }
-                Thread.Sleep(5);
                 Console.SetCursorPosition(0, 0);
             }
 
