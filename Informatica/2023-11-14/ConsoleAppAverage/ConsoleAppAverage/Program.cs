@@ -1,5 +1,5 @@
 ﻿/***************************************
-*    Alan Davide Bovo 3H 2023-11-07    *
+*    Alan Davide Bovo 3H 2023-11-14    *
 * Calcolo della media di alcuni double *
 ****************************************/
 
