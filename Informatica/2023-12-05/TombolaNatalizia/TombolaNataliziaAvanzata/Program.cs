@@ -3,6 +3,9 @@
 *       Gioco della tombola      *
 *********************************/
 using System;
+using System.Security.Cryptography;
+using System.Text;
+using System.IO;
 
 namespace TombolaNatalizia
 {
@@ -52,7 +55,7 @@ namespace TombolaNatalizia
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    if (tabellone[i+j])
+                    if (tabellone[i + j])
                         Console.Write($"   {i + j + 1:00}"); // stampa di un numero uscito
                     else
                         Console.Write("   ##"); // stampa del numero non ancora uscito
@@ -87,7 +90,7 @@ namespace TombolaNatalizia
             Console.Write("Inserisci la tua Scelta [ ]");
             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
             while ((scelta = LeggiTasto().ToString().ToUpper()[0]) == '\0' || // ToString().ToUpper() per leggere pure le scelte con caratteri minuscoli
-                (scelta != 'E' && scelta != 'C' && scelta != 'D' && 
+                (scelta != 'E' && scelta != 'C' && scelta != 'D' &&
                 scelta != 'T' && scelta != 'S' && scelta != 'Q')) ; // leggo da console finchè non ricevo una scelta corretta
             Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop);
         }
@@ -269,11 +272,54 @@ namespace TombolaNatalizia
         }
         #endregion
 
+        #region Funzione per salvare una schedina su file
+        static void SalvaSchedina(int[,] schedina, int ID)
+        {
+            string path = $"schedina{ID}.txt";
+            string righe = J
+
+            byte[] plaintext = Encoding.UTF8.GetBytes(righe);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Mode = CipherMode.ECB;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                byte[] encryptedBytes = encryptor.TransformFinalBlock(plaintext, 0, plaintext.Length);
+
+                File.WriteAllBytes(path, encryptedBytes);
+            }
+        }
+        #endregion
+
+        #region Funzione per caricare una schedina da file
+        static void SalvaSchedina(int[,] schedina, int ID)
+        {
+            string path = $"schedina{ID}.txt";
+            string righe = StampaSchedina(schedina);
+
+            byte[] plaintext = Encoding.UTF8.GetBytes(righe);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Mode = CipherMode.ECB;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                byte[] encryptedBytes = encryptor.TransformFinalBlock(plaintext, 0, plaintext.Length);
+
+                File.WriteAllBytes(path, encryptedBytes);
+            }
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             bool keep = true;
             string data = ""; // stringa da stampare prima del menu
             char scelta;
+            int id = 0;
 
             Console.Title = "Alan Davide Bovo 3H 2023-11-28";
 
@@ -330,6 +376,7 @@ namespace TombolaNatalizia
                     case 'S':
                         int[,] schedina = GeneraSchedina();
                         data = "La schedina generata è:\n\n" + StampaSchedina(schedina);
+                        SalvaSchedina(schedina, id++);
                         break;
 
                     case 'Q':

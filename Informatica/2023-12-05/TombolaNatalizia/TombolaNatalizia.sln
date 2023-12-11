@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TombolaNatalizia", "TombolaNatalizia\TombolaNatalizia.csproj", "{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TombolaNataliziaAvanzata", "TombolaNataliziaAvanzata\TombolaNataliziaAvanzata.csproj", "{762B1FB5-FC91-45B0-B7F5-AEE246450F8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762B1FB5-FC91-45B0-B7F5-AEE246450F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762B1FB5-FC91-45B0-B7F5-AEE246450F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762B1FB5-FC91-45B0-B7F5-AEE246450F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762B1FB5-FC91-45B0-B7F5-AEE246450F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
