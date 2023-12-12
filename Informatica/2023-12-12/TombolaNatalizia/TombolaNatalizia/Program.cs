@@ -3,6 +3,7 @@
 *       Gioco della tombola      *
 *********************************/
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TombolaNatalizia
@@ -108,29 +109,16 @@ namespace TombolaNatalizia
         #region Funzione per verificare una vincita
         static bool VerificaVincita(Scelta scelta)
         {
-            switch (scelta)
+            List<int> usciti = new List<int>(); // lista dei numeri usciti
+            int temp;
+            for (int i = 0; i < (int)scelta; i++)
             {
-                case Scelta.Cinquina: // controllo per la cinquina
-                    for (int i = 0; i < (int)scelta; i++)
-                        if (!tabellone[LetturaIntero($"Inserisci il {i + 1} numero: ")])
-                            return false; // cinquina non valida
-                    return true; // cinquina valida poiché tutti i numeri sono validi
-
-                case Scelta.Decina:
-                    for (int i = 0; i < (int)scelta; i++)
-                        if (!tabellone[LetturaIntero($"Inserisci il {i + 1} numero: ")])
-                            return false; // decina non valida
-                    return true; // decina valida poiché tutti i numeri sono validi
-
-                case Scelta.Tombola:
-                    for (int i = 0; i < (int)scelta; i++)
-                        if (!tabellone[LetturaIntero($"Inserisci il {i + 1} numero: ")])
-                            return false; // tombola non valida
-                    return true; // tombola valida poiché tutti i numeri sono validi
-
-                default:
-                    return false;
+                if (!tabellone[temp = LetturaIntero($"Inserisci il {i + 1} numero: ")] || usciti.Contains(temp))
+                    return false; // cinquina non valida
+                else
+                    usciti.Add(temp); // aggiungo agli estratti
             }
+            return true;
         }
         #endregion
 
