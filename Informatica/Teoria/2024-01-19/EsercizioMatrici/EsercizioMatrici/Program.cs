@@ -73,6 +73,32 @@ namespace EsercizioMatrici
         }
         #endregion
 
+        #region Funzione per stampare i voti insufficienti di un studente
+        static void StampaInsufficienti(int[,] quadrimestre, string[] materie, int stud)
+        {
+            for (int i = 0; i < quadrimestre.GetLength(1); i++)
+            {
+                if (quadrimestre[stud, i] < 6)
+                    Console.WriteLine($"{materie[i]}: {quadrimestre[stud, i]}");
+            }
+        }
+        #endregion
+
+        #region Funzione per stampare la media in una materia della classe
+        static void StampaMediaMateria(int[,] primoQuad, int[,] secondoQuad, int mat, string materia)
+        {
+            int sommaPrimo = 0, sommaSecondo = 0;
+            for (int i = 0; i < primoQuad.GetLength(0); i++)
+            {
+                sommaPrimo += primoQuad[i, mat];
+                sommaSecondo += secondoQuad[i, mat];
+            }
+
+            Console.WriteLine("Media {0} primo quadrimestre: {1:0.000}", materia, sommaPrimo / primoQuad.GetLength(0));
+            Console.WriteLine("Media {0} primo quadrimestre: {1:0.000}", materia, sommaSecondo / secondoQuad.GetLength(0));
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             int n = ReadInt("Inserisci il numero di alunni: ");
@@ -94,6 +120,8 @@ namespace EsercizioMatrici
                     t2[i, e] = ReadInt($"Inserisci il voto che ha preso {nome[i]} in {materia[e]} nel secondo quadrimestre: ");
                 }
             }
+
+            //TODO: creare il menu' per leggere la scelta e i dati
 
             Console.Write("Premi un tasto per terminare l'esecuzione del programma ...");
             Console.ReadKey();
