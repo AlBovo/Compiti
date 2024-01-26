@@ -48,7 +48,7 @@ namespace _2048
         #endregion
 
         #region Funzione per controllare se è possibile fare un movimento ed eventualmente farlo
-        static bool MakeMove(int[,] mat, ConsoleKey key)
+        static bool MakeMove(int[,] mat, ConsoleKey key, ref long punteggio)
         {
             bool done = false; // variabile per controllare se è stato fatto un movimento
             switch(key)
@@ -77,6 +77,7 @@ namespace _2048
                             if (mat[i, e] == mat[i - 1, e]) // se ho due numeri uguali
                             {
                                 mat[i, e]++;            // incremento il numero
+                                punteggio += 1 << mat[i, e]; // aggiorno il punteggio
                                 mat[i - 1, e] = 0;      // azzero la posizione precedente
                                 done = true;            // ho fatto un movimento
                             }
@@ -122,6 +123,7 @@ namespace _2048
                             if (mat[i, e] == mat[i + 1, e]) // se ho due numeri uguali
                             {
                                 mat[i, e]++;                // incremento il numero
+                                punteggio += 1 << mat[i, e]; // aggiorno il punteggio
                                 mat[i + 1, e] = 0;          // azzero la posizione precedente
                                 done = true;                // ho fatto un movimento
                             }
@@ -167,6 +169,7 @@ namespace _2048
                             if (mat[i, e] == mat[i, e - 1]) // se ho due numeri uguali
                             {
                                 mat[i, e]++;                // incremento il numero
+                                punteggio += 1 << mat[i, e]; // aggiorno il punteggio
                                 mat[i, e - 1] = 0;          // azzero la posizione precedente
                                 done = true;                // ho fatto un movimento
                             }
@@ -212,6 +215,7 @@ namespace _2048
                             if (mat[i, e] == mat[i, e + 1]) // se ho due numeri uguali
                             {
                                 mat[i, e]++;                // incremento il numero
+                                punteggio += 1 << mat[i, e]; // aggiorno il punteggio
                                 mat[i, e + 1] = 0;          // azzero la posizione precedente
                                 done = true;                // ho fatto un movimento
                             }
@@ -376,17 +380,19 @@ namespace _2048
         static void Main(string[] args)
         {
             int[,] mat = new int[4, 4]; // matrice di gioco
+            long punteggio = 0;         // variabile per contare il punteggio
             GeneraNumero(mat);          // imposto il primo numero della griglia 
 
             while (true)
             {
                 PrintMenu();            // stampo il menu
+                Console.WriteLine($"Punteggio: {punteggio}");
                 PrintGrid(mat);         // stampo la griglia di gioco
                 ConsoleKey key;
                 while ((key = LeggiTasto()) < ConsoleKey.LeftArrow || key > ConsoleKey.DownArrow)
                     continue;           // leggo un tasto finchè non è una freccia
 
-                if (!MakeMove(mat, key)) // controllo se è possibile fare un movimento
+                if (!MakeMove(mat, key, ref punteggio)) // controllo se è possibile fare un movimento
                 {
                     Console.Clear();
                     continue;
