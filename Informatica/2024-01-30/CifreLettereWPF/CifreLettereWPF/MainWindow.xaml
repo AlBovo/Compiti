@@ -1,0 +1,13 @@
+﻿<Window x:Class="AppWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Alan Davide Bovo 3H 2024-01-30" Height="100" Width="400">
+    <Grid>
+        <TextBox x:Name="numeroTextBox" HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <Button x:Name="bottoneSubmit" Content="Convert" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Center" Click="bottoneSubmit_Click"/>
+        <TextBlock x:Name="numeroOutput" HorizontalAlignment="Left" Background="#FFDDDDDD" Margin="230,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" IsEnabled="False"/>
+    </Grid>
+</Window>
