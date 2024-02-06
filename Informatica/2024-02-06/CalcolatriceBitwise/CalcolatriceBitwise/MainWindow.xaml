@@ -1,0 +1,32 @@
+﻿<Window x:Class="CalcolatriceBitwise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalcolatriceBitwise"
+        Title="Alan Davide Bovo 3H 2024-02-06" Height="322" Width="835">
+    <Grid>
+        <TextBlock Name="numberTextBox" HorizontalAlignment="Left" Margin="30,52,0,0" TextWrapping="Wrap" TextAlignment="Right"  VerticalAlignment="Top" Width="200" Height="40" FontSize="25"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="246,52,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="25"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="296,52,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="25"/>
+        <Button Content="SHIFT" HorizontalAlignment="Left" Margin="418,52,0,0" VerticalAlignment="Top" Width="91" Height="40" FontSize="25" />
+        <Button Content=">>" HorizontalAlignment="Left" Margin="664,52,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="25" Click="ShiftRightRow1"/>
+        <Button Content="NOT" HorizontalAlignment="Left" Margin="343,52,0,0" VerticalAlignment="Top" Width="70" Height="40" FontSize="25"/>
+        <TextBlock Name="shiftTextBlock" HorizontalAlignment="Left" Margin="569,52,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" TextAlignment="Center" Width="90" Height="40" FontSize="25"/>
+        <TextBlock Name="resultTextBlock" HorizontalAlignment="Left" Margin="30,161,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="200" FontSize="25"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="514,52,0,0" VerticalAlignment="Top" Width="50" Height="40" FontSize="25" Click="ShiftLeftRow1" />
+        <Button Content="&lt;-" HorizontalAlignment="Left" Margin="729,52,0,0" VerticalAlignment="Top" Height="40" Width="55" FontSize="25" Click="SwapDirection"/>
+        <TextBlock x:Name="numberTextBox_2" HorizontalAlignment="Left" Margin="30,105,0,0" TextWrapping="Wrap" TextAlignment="Right"  VerticalAlignment="Top" Width="200" Height="40" FontSize="25"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="246,105,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="25" />
+        <Button Content="1" HorizontalAlignment="Left" Margin="296,105,0,0" VerticalAlignment="Top" Width="40" Height="40" FontSize="25" />
+        <Button Content="SHIFT" HorizontalAlignment="Left" Margin="418,105,0,0" VerticalAlignment="Top" Width="91" Height="40" FontSize="25" />
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="664,105,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="25" Click="ShiftRightRow2"/>
+        <Button Content="NOT" HorizontalAlignment="Left" Margin="343,105,0,0" VerticalAlignment="Top" Width="70" Height="40" FontSize="25"/>
+        <TextBlock x:Name="shiftTextBlock_2" HorizontalAlignment="Left" Margin="569,105,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" TextAlignment="Center" Width="90" Height="40" FontSize="25"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="514,105,0,0" VerticalAlignment="Top" Width="50" Height="40" FontSize="25" Click="ShiftLeftRow2" />
+        <Button Content="&lt;-" HorizontalAlignment="Left" Margin="729,105,0,0" VerticalAlignment="Top" Height="40" Width="55" FontSize="25" Click="SwapDirection"/>
+        <Button Content="AND" HorizontalAlignment="Left" Margin="30,214,0,0" VerticalAlignment="Top" Height="40" Width="80" FontSize="25"/>
+        <Button Content="OR" HorizontalAlignment="Left" Margin="115,214,0,0" VerticalAlignment="Top" Height="40" Width="80" FontSize="25"/>
+        <Button Content="XOR" HorizontalAlignment="Left" Margin="200,214,0,0" VerticalAlignment="Top" Height="40" Width="80" FontSize="25"/>
+    </Grid>
+</Window>
