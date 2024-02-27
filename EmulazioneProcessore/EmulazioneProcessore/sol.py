@@ -36,77 +36,77 @@ try:
                 continue
             elif data[i] == "1":
                 if isRegister(int(data[i+2])):
-                    decompiled.write(d + r[int(data[i+1])] + " " + f'[{r[int(data[i+2])]}"' + "\n")
+                    decompiled.write(d + r[int(data[i+1]) % (1 << 15)] + ", " + f'[{r[int(data[i+2]) % (1 << 15)]}]' + "\n")
                 else:
-                    decompiled.write(d + r[int(data[i+1])] + " " + hex(int(data[i+2])) + "\n")
+                    decompiled.write(d + r[int(data[i+1]) % (1 << 15)] + ", " + hex(int(data[i+2])) + "\n")
                 i += 3
                 continue
             elif data[i] == "2":
                 if isRegister(int(data[i+1])):
-                    decompiled.write(d + f'[{r[int(data[i+1])]}]' + "\n")
+                    decompiled.write(d + f'[{r[int(data[i+1]) % (1 << 15)]}]' + "\n")
                 else:
                     decompiled.write(d + hex(int(data[i+1])) + "\n")
                 i += 2
                 continue
             elif data[i] == "3":
-                decompiled.write(d + r[int(data[i+1])] + "\n")
+                decompiled.write(d + r[int(data[i+1]) % (1 << 15)] + "\n")
                 i += 2
                 continue
             elif data[i] == "4":
-                t1 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                t2 = f'[{r[int(data[i+3])]}]' if isRegister(int(data[i+3])) else hex(int(data[i+3]))
+                t1 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                t2 = f'[{r[int(data[i+3]) % (1 << 15)]}]' if isRegister(int(data[i+3])) else hex(int(data[i+3]))
 
-                decompiled.write(d + f'[{r[int(data[i+1])]}]' + " " + t1 + " " + t2 + "\n")
+                decompiled.write(d + f'[{r[int(data[i+1]) % (1 << 15)]}]' + ", " + t1 + ", " + t2 + "\n")
                 i += 4
                 continue
             elif data[i] == "5":
-                t1 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                t2 = f'[{r[int(data[i+3])]}]' if isRegister(int(data[i+3])) else hex(int(data[i+3]))
+                t1 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                t2 = f'[{r[int(data[i+3]) % (1 << 15)]}]' if isRegister(int(data[i+3])) else hex(int(data[i+3]))
 
-                decompiled.write(d + f'[{r[int(data[i+1])]}]' + " " + t1 + " " + t2 + "\n")
+                decompiled.write(d + f'[{r[int(data[i+1]) % (1 << 15)]}]' + ", " + t1 + ", " + t2 + "\n")
                 i += 4
                 continue
             elif data[i] == "6":
-                t1 = f'[{r[int(data[i+1])]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
+                t1 = f'[{r[int(data[i+1]) % (1 << 15)]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
                 decompiled.write(d + t1 + "\n")
                 i += 2
                 continue
             elif data[i] == "7":
-                t1 = f'[{r[int(data[i+1])]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
-                t2 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                decompiled.write(d + t1 + " " + t2 + "\n")
+                t1 = f'[{r[int(data[i+1]) % (1 << 15)]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
+                t2 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                decompiled.write(d + t1 + ", " + t2 + "\n")
                 i += 3
                 continue
             elif data[i] == "8":
-                t1 = f'[{r[int(data[i+1])]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
-                t2 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                decompiled.write(d + t1 + " " + t2 + "\n")
+                t1 = f'[{r[int(data[i+1]) % (1 << 15)]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
+                t2 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                decompiled.write(d + t1 + ", " + t2 + "\n")
                 i += 3
                 continue
             elif data[i] in ["9", "10", "11", "12", "13"]:
-                t1 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                t2 = f'[{r[int(data[i+3])]}]' if isRegister(int(data[i+3])) else hex(int(data[i+3]))
+                t1 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                t2 = f'[{r[int(data[i+3]) % (1 << 15)]}]' if isRegister(int(data[i+3])) else hex(int(data[i+3]))
 
-                decompiled.write(d + f'[{r[int(data[i+1])]}]' + " " + t1 + " " + t2 + "\n")
+                decompiled.write(d + f'[{r[int(data[i+1]) % (1 << 15)]}]' + ", " + t1 + ", " + t2 + "\n")
                 i += 4
                 continue
             elif data[i] == "14":
-                t2 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                decompiled.write(d + f'[{r[int(data[i+1])]}]' + " " + t2 + "\n")
+                t2 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                decompiled.write(d + f'[{r[int(data[i+1]) % (1 << 15)]}]' + ", " + t2 + "\n")
                 i += 3
                 continue
             elif data[i] in ["15", "16"]:
-                t1 = f'[{r[int(data[i+1])]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
-                t2 = f'[{r[int(data[i+2])]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
-                decompiled.write(d + t1 + " " + t2 + "\n")
+                t1 = f'[{r[int(data[i+1]) % (1 << 15)]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
+                t2 = f'[{r[int(data[i+2]) % (1 << 15)]}]' if isRegister(int(data[i+2])) else hex(int(data[i+2]))
+                decompiled.write(d + t1 + ", " + t2 + "\n")
                 i += 3
                 continue
             elif data[i] in ["17", "19"]:
                 if data[i] == "17":
-                    t1 = f'[{r[int(data[i+1])]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
+                    t1 = f'[{r[int(data[i+1]) % (1 << 15)]}]' if isRegister(int(data[i+1])) else hex(int(data[i+1]))
                 else:
                     t1 = f'"{chr(int(data[i+1]))}"'.replace("\n", "\\n")
-                decompiled.write(d + t1  + "\n")
+                decompiled.write(d + t1 + "\n")
                 i += 2
                 continue
             elif data[i] == "18":
@@ -114,7 +114,7 @@ try:
                 i += 1
                 continue
             elif data[i] == "20":
-                decompiled.write(d + f"[{r[int(data[i+1])]}]" + "\n")
+                decompiled.write(d + f"[{r[int(data[i+1]) % (1 << 15)]}]" + "\n")
                 i += 2
                 continue
             elif data[i] == "21":
@@ -125,6 +125,20 @@ try:
                 print(f"Errore: l'istruzione non esiste {i} {data[i]}")
                 i += 1
                 continue
-# mi ammazzo porcoddio (:D PORCODDIO VIRTUALE :D)
 except:
     pass
+# decompiled.close()
+# data = open("decompiled.asm", "r").read().split("\n")
+# decompiled = open("decompiled.asm", "w")
+
+# prev = ''
+# for i in range(len(data)):
+#     if "out" in data[i]:
+#         prev += data[i].split(" ")[1].replace('"', '')
+#         i += 1
+#     else:
+#         if prev != '':
+#             decompiled.write(f'out "{prev}"\n')
+#             prev = ''
+#         decompiled.write(data[i] + "\n")
+    
