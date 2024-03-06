@@ -4,7 +4,7 @@ import string
 def isRegister(i: int) -> bool:
     return i in range(32768, 32776)
 
-data = open("code.txt", "r").read().split("\n")
+data = open("code_dump.txt", "r").read().split("\n")
 decompiled = open("decompiled.asm", "w")
 
 instr = {

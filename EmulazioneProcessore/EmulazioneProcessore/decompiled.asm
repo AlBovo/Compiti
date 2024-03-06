@@ -430,8 +430,8 @@ cmp [$rbx], [$rax], 0x54
 jf [$rbx], 0x51a
 wmem 0x3d5, 0x15
 wmem 0x3d6, 0x7
-jmp 0x3d9
-out "Ͼ"
+nop 
+jt 0x13, 0x3fe
 out "w"
 out "m"
 out "e"
@@ -1003,7 +1003,6 @@ mov $rax, 0x7fff
 pop $rbx
 ret 
 jmp 0xada
-int3 
 int3 
 int3 
 int3 

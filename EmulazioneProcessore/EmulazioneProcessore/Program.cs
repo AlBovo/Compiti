@@ -569,6 +569,17 @@ namespace EmulazioneProcessore
             }
         }
 
+        static void DumpRAM(string file_name)
+        {
+            using (StreamWriter sw = new StreamWriter(file_name))
+            {
+                for (int i = 0; i < RAM.Length; i++)
+                {
+                    sw.WriteLine(RAM[i]);
+                }
+                sw.Close();
+            }
+        }
 
         static void LoadRAM(string file_name)
         {
