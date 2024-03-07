@@ -2,6 +2,8 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 
+#define WINDOWS
+
 namespace EmulazioneProcessore
 {
     internal class Program
@@ -598,7 +600,12 @@ namespace EmulazioneProcessore
 
         static void Main(string[] args)
         {
+            #if WINDOWS
             string path = @"..\..\..\code.txt";
+            #else
+            string path = "../../code.txt";
+            #endif
+            
             LoadRAM(path);
             try
             {
