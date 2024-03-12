@@ -1,0 +1,15 @@
+﻿<Window x:Class="CruciverbaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CruciverbaWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="START" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="Start"/>
+        <Grid Name="gridwin" Margin="205,50,0,0"/>
+        <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="50,126,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="comboBoxChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,105,0,0" TextWrapping="Wrap" Text="SELECT A WORD TO FIND" VerticalAlignment="Top" Width="150" FontWeight="Bold"/>
+    </Grid>
+</Window>
