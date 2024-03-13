@@ -16,10 +16,25 @@ namespace CruciverbaWPF
         {
             InitializeComponent();
         }
+
+        static public Random rand = new Random();
         static public Button[,] buttons;
         static public List<List<char>> chars = new List<List<char>>();
+        static private SolidColorBrush choseColor;
 
-        private bool Trova(int x, int y, string toFind)
+        private SolidColorBrush RandomColor()
+        {
+            int count = typeof(Brushes).GetProperties().Length;
+            int index = rand.Next(0, count);
+            var brushProperty = typeof(Brushes).GetProperties()[index];
+            return (SolidColorBrush)brushProperty.GetValue(null)!;
+
+        }
+
+        /// <summary>
+        /// Function to find a word in a specific coordinate
+        /// </summary>
+        private bool FindWord(int x, int y, string toFind)
         {
             string temp = "";
             for (int i = y, e = x; i >= 0 && e >= 0; i--, e--) // alto sinistra
@@ -28,7 +43,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e++, i++].Background = Brushes.Blue;
+                        buttons[e++, i++].Background = choseColor;
                     return true;
                 }
             }
@@ -39,7 +54,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e++, i].Background = Brushes.Blue;
+                        buttons[e++, i].Background = choseColor;
                     return true;
                 }
             }
@@ -50,7 +65,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e++, i--].Background = Brushes.Blue;
+                        buttons[e++, i--].Background = choseColor;
                     return true;
                 }
             }
@@ -61,7 +76,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e, i++].Background = Brushes.Blue;
+                        buttons[e, i++].Background = choseColor;
                     return true;
                 }
             }
@@ -72,7 +87,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e, i--].Background = Brushes.Blue;
+                        buttons[e, i--].Background = choseColor;
                     return true;
                 }
             }
@@ -83,7 +98,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e--, i++].Background = Brushes.Blue;
+                        buttons[e--, i++].Background = choseColor;
                     return true;
                 }
             }
@@ -94,7 +109,7 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e--, i].Background = Brushes.Blue;
+                        buttons[e--, i].Background = choseColor;
                     return true;
                 }
             }
@@ -105,13 +120,16 @@ namespace CruciverbaWPF
                 if (temp == toFind)
                 {
                     for (int j = 0; j < temp.Length; j++)
-                        buttons[e--, i--].Background = Brushes.Blue;
+                        buttons[e--, i--].Background = choseColor;
                     return true;
                 }
             }
             return false;
         }
 
+        /// <summary>
+        /// Function to read from a file the data of the puzzle
+        /// </summary>
         private void ReadFile(string path)
         {
             using (StreamReader sr = new StreamReader(path))
@@ -137,8 +155,16 @@ namespace CruciverbaWPF
             }
         }
 
+        /// <summary>
+        /// Function to initialize all the variables
+        /// </summary>
         private void Start(object sender, RoutedEventArgs e)
         {
+            gridwin.Children.Clear();
+            chars.Clear();
+            comboBox.Items.Clear();
+            comboBox.IsEnabled = true;
+
             try
             {
                 ReadFile(@"..\..\..\dati.txt");
@@ -169,14 +195,26 @@ namespace CruciverbaWPF
 
         private void comboBoxChanged(object sender, SelectionChangedEventArgs e)
         {
-            bool done = false;
-            for(int i=0; i<chars.Count && !done; i++)
+            if (comboBox.Items.Count == 0)
             {
-                for(int j=0; j < chars[i].Count && !done; j++)
+                comboBox.IsEnabled = false;
+                //MessageBox.Show("There are no more words to search in the puzzle", "Error");
+            }
+
+            bool done = false;
+            string word = comboBox.SelectedValue?.ToString()!;
+            choseColor = RandomColor();
+
+            for (int i = 0; i < chars.Count && !done; i++)
+            {
+                for (int j = 0; j < chars[i].Count && !done; j++)
                 {
-                    done |= Trova(i, j, ((ComboBox)sender).SelectedValue.ToString()!);
+                    done |= FindWord(i, j, word);
                 }
             }
+
+            if (done)
+                comboBox.Items.RemoveAt(comboBox.SelectedIndex);
         }
     }
 }
