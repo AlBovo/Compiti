@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercizioDijkstra", "EsercizioDijkstra\EsercizioDijkstra.csproj", "{243A8C49-671B-4552-AA6A-A62861A889C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercizioDFS", "EsercizioDFS\EsercizioDFS.csproj", "{FA1288A2-5117-40A3-B5DC-3826B48F4CA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{243A8C49-671B-4552-AA6A-A62861A889C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{243A8C49-671B-4552-AA6A-A62861A889C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{243A8C49-671B-4552-AA6A-A62861A889C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{243A8C49-671B-4552-AA6A-A62861A889C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1288A2-5117-40A3-B5DC-3826B48F4CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1288A2-5117-40A3-B5DC-3826B48F4CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1288A2-5117-40A3-B5DC-3826B48F4CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1288A2-5117-40A3-B5DC-3826B48F4CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3933A0A-6002-449F-A5CA-69DE6D4EA11A}
+	EndGlobalSection
+EndGlobal
