@@ -170,7 +170,7 @@ namespace CruciverbaWPF
 
             try
             {
-                ReadFile(@"..\..\..\dati.txt"); // inizializzo tutte le variabili leggendo i dati dal file
+                ReadFile(@"..\..\..\..\dati.txt"); // inizializzo tutte le variabili leggendo i dati dal file
             }
             catch (Exception ex)
             {

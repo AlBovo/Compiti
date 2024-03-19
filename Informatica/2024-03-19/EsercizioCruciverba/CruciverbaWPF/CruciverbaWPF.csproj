@@ -11,8 +11,4 @@
     <None Remove="dati.txt" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="dati.txt" />
-  </ItemGroup>
-
 </Project>
