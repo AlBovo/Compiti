@@ -126,7 +126,7 @@ namespace EsercizioCruciverba
         static void Main()
         {
             Console.Title = "Alan Davide Bovo 3H 2024-03-12";
-            ReadFile(@"..\..\dati.txt");
+            ReadFile(@"..\..\..\dati.txt");
             done = new bool[chars.Count, chars[0].Count];
             for (int i = 0; i < chars.Count; i++)
             {

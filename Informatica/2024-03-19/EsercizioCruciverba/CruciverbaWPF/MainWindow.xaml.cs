@@ -2,6 +2,7 @@
 * Alan Davide Bovo 3H 2024-03-12 *
 *   Applicazione WPF Cruciverba  *
 *********************************/
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,7 @@ namespace CruciverbaWPF
         static public Button[,] buttons;                                // Matrice dei bottoni relativi ad ogni carattere
         static public List<List<char>> chars = new List<List<char>>();  // Lista dei caratteri della griglia
         static private SolidColorBrush choseColor;                      // Colore scelto per colorare la parola corrente
+        const  string FILEDEFAULT = "dati.txt";
 
         private SolidColorBrush RandomColor()
         {
@@ -154,6 +156,9 @@ namespace CruciverbaWPF
                     comboBox.Items.Add(line);       // aggiungo nella UI la parola appena letta
                     line = sr.ReadLine()!;          // leggo una nuova parola
                 }
+
+                if (comboBox.Items.Count == 0)
+                    throw new Exception("The data file is not valid.");
                 sr.Close(); // chiudo il file
             }
         }
@@ -170,11 +175,21 @@ namespace CruciverbaWPF
 
             try
             {
-                ReadFile(@"..\..\..\..\dati.txt"); // inizializzo tutte le variabili leggendo i dati dal file
+                string percorso = Path.GetFullPath(Directory.GetCurrentDirectory() + @"\..\..\..\..\");
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = percorso;
+                openFileDialog.Filter = "Text files (*.txt)|*.txt";
+                openFileDialog.FileName = FILEDEFAULT;
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    percorso = openFileDialog.FileName;
+                    ReadFile(percorso);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error in reading file"); // sono un coglione
+                MessageBox.Show(ex.Message, "Error in reading file");
+                return;
             }
 
             buttons = new Button[chars.Count, chars[0].Count];  // inizializzo la matrice dei bottoni
