@@ -2,3 +2,5 @@
 	directory = %(prefix)///dc1.local.ittcesena.it/Studenti/4H/bovo.alandavide/
 [user]
 	email = alandavide.bovo.stud@ispascalcomandini.it
+[core]
+	safecrlf = false
