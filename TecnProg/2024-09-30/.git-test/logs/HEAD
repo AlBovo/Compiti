@@ -1,0 +1,17 @@
+0000000000000000000000000000000000000000 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680183 +0200	commit (initial): aggiunta la prima frase
+6e4109070566c3a6a414f578c448aa0bfb06f674 8d44d73c2f8912ae3c829a1193bba136750da1c0 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680223 +0200	commit: aggiunta la seconda frase
+8d44d73c2f8912ae3c829a1193bba136750da1c0 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680303 +0200	reset: moving to HEAD~1
+6e4109070566c3a6a414f578c448aa0bfb06f674 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680310 +0200	checkout: moving from master to lucchi
+6e4109070566c3a6a414f578c448aa0bfb06f674 74dcbd422a53c99a02e95ba2ca95ce7411f09763 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680328 +0200	commit: aggiunta la seconda fase
+74dcbd422a53c99a02e95ba2ca95ce7411f09763 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680350 +0200	reset: moving to HEAD~1
+6e4109070566c3a6a414f578c448aa0bfb06f674 a629d91e0a0144398eb86cf2af966113fabb3bb1 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680364 +0200	commit: aggiunta la seconda frase
+a629d91e0a0144398eb86cf2af966113fabb3bb1 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680516 +0200	checkout: moving from lucchi to master
+6e4109070566c3a6a414f578c448aa0bfb06f674 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680578 +0200	checkout: moving from master to lombardi
+6e4109070566c3a6a414f578c448aa0bfb06f674 d0df077e7e30a50cd4cbdc5444bc830c5a019c96 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680664 +0200	commit: aggiunta la seconda frase
+d0df077e7e30a50cd4cbdc5444bc830c5a019c96 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680675 +0200	checkout: moving from lombardi to master
+6e4109070566c3a6a414f578c448aa0bfb06f674 d0df077e7e30a50cd4cbdc5444bc830c5a019c96 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680686 +0200	checkout: moving from master to lombardi
+d0df077e7e30a50cd4cbdc5444bc830c5a019c96 a629d91e0a0144398eb86cf2af966113fabb3bb1 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680692 +0200	checkout: moving from lombardi to lucchi
+a629d91e0a0144398eb86cf2af966113fabb3bb1 d0df077e7e30a50cd4cbdc5444bc830c5a019c96 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680702 +0200	checkout: moving from lucchi to lombardi
+d0df077e7e30a50cd4cbdc5444bc830c5a019c96 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680724 +0200	checkout: moving from lombardi to master
+6e4109070566c3a6a414f578c448aa0bfb06f674 d0df077e7e30a50cd4cbdc5444bc830c5a019c96 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680727 +0200	merge lombardi: Fast-forward
+d0df077e7e30a50cd4cbdc5444bc830c5a019c96 b0b515a58ffab7d1330c27d5dc904b32b836a303 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727681479 +0200	commit (merge): riparato il merge conflict con il branch lucchi

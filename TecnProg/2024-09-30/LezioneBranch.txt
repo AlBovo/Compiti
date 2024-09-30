@@ -1,0 +1,3 @@
+Gli alberi sono pieni di rami.
+I rami non sono pieni di foglie.
+I rami sono pieni di foglie.
