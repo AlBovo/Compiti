@@ -19,7 +19,7 @@ namespace ThreadCorsa
         static int classifica = 0; // classifica della gara
         static Object _lock = new Object(); // lock per le risorse usate dai thread
         static Random random = new Random(); // random per generare le velocità dei corridori
-        static string[] nomi = { "Andrea", "Baldo", "Baldo" };
+        static string[] nomi = { "Andrea", "Baldo", "Carlo" };
 
         static string[][] persone = 
         {
