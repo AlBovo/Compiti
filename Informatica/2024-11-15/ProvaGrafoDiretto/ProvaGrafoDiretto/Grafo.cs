@@ -13,6 +13,14 @@ namespace Grafi
             public int nodo_partenza;   // nodo di partenza dall'arco
             public int nodo_arrivo;     // nodo di arrivo dell'arco
             public int costo;           // costo dell'arco
+
+            // aggiunta del costruttore per velocizzare la scrittura del codice
+            public Arco(int nodo_partenza, int nodo_arrivo, int costo)
+            {
+                this.nodo_partenza = nodo_partenza;
+                this.nodo_arrivo = nodo_arrivo;
+                this.costo = costo;
+            }
         }
         #endregion
 
@@ -53,21 +61,8 @@ namespace Grafi
         public void AggiungiArco(string nome_nodo_partenza, string nome_nodo_arrivo, int costo)
         {
             // conversione dei dati passati alla funzione in un'istanza della struct arco
-
-            // conversione dei nomi in indici
-            int nodo_partenza = this[nome_nodo_partenza];
-            int nodo_arrivo = this[nome_nodo_arrivo];
-            
-            // creazione dell'istanza dell'arco
-            Arco arco = new Arco 
-            {
-                nodo_partenza = nodo_partenza, 
-                nodo_arrivo = nodo_arrivo, 
-                costo = costo
-            };
-
             // chiamata alla stessa funzione con firma diversa
-            AggiungiArco(arco);
+            AggiungiArco(new Arco(this[nome_nodo_partenza], this[nome_nodo_arrivo], costo));
         }
 
         // metodo virtual per aggiungere un arco
@@ -118,18 +113,10 @@ namespace Grafi
             // metodo per aggiungere un arco nel grafo non diretto
             public override void AggiungiArco(Arco arco)
             {
-                // controllo dell'indice dei nodi
-                if (!ControllaIndiceNodo(arco.nodo_partenza)) 
-                    throw new ArgumentException("Nodo non ancora inserito nel grafo");
-                if (!ControllaIndiceNodo(arco.nodo_arrivo)) 
-                    throw new ArgumentException("Nodo non ancora inserito nel grafo");
-
-                #region aggiunta degli archi in entrambi le liste di entrambi i nodi
-                nodi[arco.nodo_arrivo].entranti.Add(arco);
-                nodi[arco.nodo_arrivo].uscenti.Add(arco);
-                nodi[arco.nodo_partenza].entranti.Add(arco);
-                nodi[arco.nodo_partenza].uscenti.Add(arco);
-                #endregion
+                // aggiunta dell'arco come se fosse diretto
+                base.AggiungiArco(arco);
+                // inversione dell'arco poiché non è diretto
+                base.AggiungiArco(new Arco(arco.nodo_arrivo, arco.nodo_partenza, arco.costo));
             }
         }
     }
