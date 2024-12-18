@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="immagini\acquario.jpg" />
+    <None Remove="immagini\alga.png" />
+    <None Remove="immagini\alga1.png" />
+    <None Remove="immagini\alga2.png" />
+    <None Remove="immagini\granchio.png" />
+    <None Remove="immagini\pesce.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="immagini\acquario.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="immagini\alga.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="immagini\pesce.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LibreriaClassi\LibreriaClassi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="immagini\granchio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
