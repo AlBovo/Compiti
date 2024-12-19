@@ -4,7 +4,7 @@
 *********************************/
 
 using System.Windows;
-using System.Windows.Threading;
+using System.Windows.Controls;
 using LibreriaClassi;
 
 namespace AcquarioWPF
@@ -14,66 +14,39 @@ namespace AcquarioWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer dispatcherTimer = new();
-        private DispatcherTimer pesciFondo = new();
-        private DispatcherTimer pescePilotato = new();
-        private AnimatoInAcqua immagine;
-        private int counter = 0;
-
-        /// <summary>
-        /// Method used to setup all data for the dispatcher
-        /// </summary>
-        private void SetupTimer()
+        private static AnimatoSulPosto animatoSulPosto(Canvas canvas)
         {
-            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(1);
-            dispatcherTimer.Tick += new EventHandler(Tick);
-            dispatcherTimer.Start();
+            Uri uri = new("pack://application:,,,/immagini/alga.png", UriKind.RelativeOrAbsolute);
+            return new(uri, (100, 350), 0, canvas);
         }
 
-        /// <summary>
-        /// Method used called by the dispatcher every 300 ms
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="eventArgs"></param>
-        private void Tick(object? sender, EventArgs eventArgs) => (++counter).ToString();
-
-        /// <summary>
-        /// Method to add a fish into the acquarium
-        /// </summary>
-        private AnimatoSulFondo PesceAnimato()
+        private static AnimatoSulFondo animatoSulFondo(Canvas canvas)
         {
-            Uri uri = new("immagini/granchio.png", UriKind.RelativeOrAbsolute);
-            return new(uri, (1, 150), canvasAcquario);
+            Uri uri = new("pack://application:,,,/immagini/granchio.png", UriKind.RelativeOrAbsolute);
+            return new(uri, (100, 150), 5, canvas);
         }
 
-        private AnimatoSulPosto PescePosto()
+        private static AnimatoSilurante animatoSilurante(Canvas canvas)
         {
-            Uri uri = new("immagini/alga.png", UriKind.RelativeOrAbsolute);
-            return new(uri, (100, 350), canvasAcquario);
+            Uri uri = new("pack://application:,,,/immagini/sottomarino.png", UriKind.RelativeOrAbsolute);
+            return new(uri, (100, 200), 5, canvas);
         }
 
-        private AnimatoPilotato PescePilotato()
+        private static AnimatoInAcqua animatoInAcqua(Canvas canvas)
         {
-            Uri uri = new("immagini/pesce.png", UriKind.RelativeOrAbsolute);
-            return new(uri, (100, 200), canvasAcquario);
+            Uri uri = new("pack://application:,,,/immagini/pescepalla.png", UriKind.RelativeOrAbsolute);
+            return new(uri, (100, 500), 5, canvas);
         }
 
         public MainWindow()
         {
             InitializeComponent();
-            var pesce1 = PescePosto();
-            var pesce2 = PesceAnimato();
-            var pesce3 = PescePilotato();
-            dispatcherTimer.Tick += new EventHandler(pesce2.Muovi);
-            pesciFondo.Tick += new EventHandler(pesce1.Muovi);
-            pesciFondo.Interval = TimeSpan.FromMilliseconds(300);
-            pesciFondo.Start();
+            Acquario acquario = new Acquario(this);
 
-            var window = Window.GetWindow(this);
-            window.KeyDown += pesce3.Muovi;
-
-
-            SetupTimer();
+            acquario.AggiungiPesce(animatoSulPosto(canvasAcquario), 300);
+            acquario.AggiungiPesce(animatoSulFondo(canvasAcquario), 30);
+            acquario.AggiungiPesce(animatoInAcqua(canvasAcquario), 30);
+            acquario.AggiungiSilurante(animatoSilurante(canvasAcquario), 30);
         }
     }
 }

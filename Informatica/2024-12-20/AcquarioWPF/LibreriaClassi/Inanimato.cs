@@ -7,9 +7,11 @@ namespace LibreriaClassi
 {
     public class Inanimato
     {
+        public Rect rect { get; protected set; }
         public Image image { get; protected set; }
-        public (double, double) size { get; protected set; }
-        protected (double, double) position = (0, 0);
+        public Canvas canvas { get; protected set; }
+        public (double, double) position { get; protected set; }
+        protected int velocity;
 
         public void AddTransform(Transform t)
         {
@@ -21,8 +23,16 @@ namespace LibreriaClassi
             image.RenderTransform = transformGroup;
         }
 
+        public virtual void Muovi(object? sender, EventArgs eventArgs) { }
 
-        public Inanimato(Uri uri, (double, double) thickness, Canvas canvas)
+        public bool IsBorder() => 
+            position.Item1 - velocity <= 0 || position.Item2 - velocity <= 0 || 
+            position.Item1 + velocity + image.ActualWidth >= canvas.Width || 
+            position.Item2 + velocity + image.ActualHeight >= canvas.Height;
+
+        public void RimuoviPesce() => canvas.Children.Remove(image);
+
+        public Inanimato(Uri uri, (double, double) thickness, int velocity, Canvas canvas)
         {
             image = new Image();
             image.Source = new BitmapImage(uri);
@@ -33,11 +43,12 @@ namespace LibreriaClassi
                 throw new ArgumentException("Invalid Y position");
 
             position = thickness;
+            this.velocity = velocity;
             AddTransform(new TranslateTransform(thickness.Item1, thickness.Item2));            
 
             image.RenderTransformOrigin = new Point(0.5, 0.5);
             canvas.Children.Add(image);
-            size = (canvas.Width, canvas.Height);
+            this.canvas = canvas;
         }
     }
 }

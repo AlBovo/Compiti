@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AcquarioWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Height="1080" Width="1920" ResizeMode="NoResize">
     <Grid>
         <Canvas Name="canvasAcquario" Height="1080" Width="1920">
             <Canvas.Background>
-                <ImageBrush ImageSource="immagini/acquario.jpg"/>
+                <ImageBrush ImageSource="pack://application:,,,/immagini/acquario.jpg"/>
             </Canvas.Background>
         </Canvas>
     </Grid>

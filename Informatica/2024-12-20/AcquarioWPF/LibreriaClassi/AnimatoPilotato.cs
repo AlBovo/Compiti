@@ -11,31 +11,31 @@ namespace LibreriaClassi
             {
                 case Key.Up:
                     DirezioneAlto = true;
-                    Muovi(5, size, true);
+                    Muovi(velocity, true);
                     break;
                 case Key.Down:
                     DirezioneAlto = false;
-                    Muovi(5, size, true);
+                    Muovi(velocity, true);
                     break;
                 case Key.Left:
                     if (!DirezioneSinistra)
                         SpecchiaImmagine();
                     DirezioneSinistra = true;
-                    Muovi(5, size, false);
+                    Muovi(velocity, false);
                     break;
                 case Key.Right:
                     if (DirezioneSinistra)
                         SpecchiaImmagine();
                     DirezioneSinistra = false;
-                    Muovi(5, size, false);
+                    Muovi(velocity, false);
                     break;
                 default:
                     return;
             }
         }
 
-        public AnimatoPilotato(Uri uri, (int, int) thickness, Canvas canvas)
-            : base(uri, thickness, canvas)
+        public AnimatoPilotato(Uri uri, (double, double) thickness, int velocity, Canvas canvas)
+            : base(uri, thickness, velocity, canvas)
         {
         }
     }

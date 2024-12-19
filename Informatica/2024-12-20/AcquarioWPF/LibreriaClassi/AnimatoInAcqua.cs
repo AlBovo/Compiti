@@ -8,21 +8,27 @@ namespace LibreriaClassi
         protected bool DirezioneSinistra = true;
         protected bool DirezioneAlto = true;
 
-
-        public virtual void Muovi(object? sender, EventArgs eventArgs)
+        public override void Muovi(object? sender, EventArgs eventArgs)
         {            
             // Controlla se l'immagine raggiunge i bordi
-            if (position.Item1 == 0 && DirezioneSinistra)
+            if (position.Item1 - velocity <= 0 && DirezioneSinistra)
             {
                 DirezioneSinistra = false; // Cambia direzione a destra
                 SpecchiaImmagine();
             }
-            else if (position.Item1 + image.ActualWidth >= size.Item1)
+            else if (position.Item1 + image.ActualWidth + velocity >= canvas.Width)
             {
                 DirezioneSinistra = true; // Cambia direzione a sinistra
                 SpecchiaImmagine();
             }
-            Muovi(2, size, true);
+
+            if (DirezioneAlto && position.Item2 - velocity == 0)
+                DirezioneAlto = false;
+            else if (!DirezioneAlto && position.Item2 + image.ActualHeight + velocity >= canvas.Height)
+                DirezioneAlto = true;
+
+            Muovi(velocity, true);
+            Muovi(velocity, false);
         }
 
         #region Metodo per muovere autonomamente l'immagine
@@ -32,8 +38,9 @@ namespace LibreriaClassi
         /// <param name="spostamento">Offset di spostamento dell'oggetto</param>
         /// <param name="canvasSize">Dimensione del canva dell'acquario</param>
         /// <param name="direzione">Booleano per indicare se l'oggetto si sposta verticalmente o orizzontalmente</param>
-        protected void Muovi(int spostamento, (double, double) canvasSize, bool direzione)
+        protected void Muovi(int spostamento, bool direzione)
         {
+            (double, double) canvasSize = (canvas.Width, canvas.Height);
             // Ottieni la posizione corrente dell'immagine
             double currentX = position.Item1;
             double currentY = position.Item2;
@@ -56,7 +63,7 @@ namespace LibreriaClassi
                 else if (newX + image.ActualWidth >= canvasSize.Item1)
                     return;
                 translateTransform = new(-spostamento, 0);
-                position.Item1 = newX;
+                position = (newX, position.Item2);
             }
             else
             {
@@ -65,7 +72,7 @@ namespace LibreriaClassi
                 else if (newY + image.ActualHeight >= canvasSize.Item2)
                     return;
                 translateTransform = new(0, DirezioneAlto ? -spostamento : spostamento);
-                position.Item2 = newY;
+                position = (position.Item1, newY);
             }
             // Aggiorna la posizione dell'immagine
             AddTransform(translateTransform);
@@ -84,7 +91,7 @@ namespace LibreriaClassi
         }
         #endregion
 
-        public AnimatoInAcqua(Uri uri, (double, double) thickness, Canvas canvas)
-            : base(uri, thickness, canvas) { }
+        public AnimatoInAcqua(Uri uri, (double, double) thickness, int velocity, Canvas canvas)
+            : base(uri, thickness, velocity, canvas) { }
     }
 }

@@ -5,7 +5,7 @@ namespace LibreriaClassi
 {
     public class AnimatoSulPosto : Inanimato
     {
-        public virtual void Muovi(object? sender, EventArgs eventArgs) => Rotate();
+        public override void Muovi(object? sender, EventArgs eventArgs) => Rotate();
 
         public void Rotate()
         {
@@ -20,7 +20,7 @@ namespace LibreriaClassi
             image.RenderTransform = tf;
         }
 
-        public AnimatoSulPosto(Uri uri, (double, double) thickness, Canvas canvas)
-            : base(uri, (thickness.Item1, canvas.Height - thickness.Item2), canvas) { }
+        public AnimatoSulPosto(Uri uri, (double, double) thickness, int velocity, Canvas canvas)
+            : base(uri, (thickness.Item1, canvas.Height - thickness.Item2), velocity, canvas) { }
     }
 }
