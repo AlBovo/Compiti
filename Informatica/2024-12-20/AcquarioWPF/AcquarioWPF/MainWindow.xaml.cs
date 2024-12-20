@@ -40,6 +40,19 @@ namespace AcquarioWPF
         }
         #endregion
 
+        #region Metodo per generare un'istanza di un AnimatoSulFondo non sul fondo
+        /// <summary>
+        /// Metodo per generare un'istanza di un AnimatoSulFondo non sul fondo
+        /// </summary>
+        /// <param name="canvas">Canvas di appartenenza dell'animato</param>
+        /// <returns>Un'istanza di un AnimatoSulFondo</returns>
+        private static AnimatoSulFondo animatoInMezzo(Canvas canvas)
+        {
+            Uri uri = new("pack://application:,,,/immagini/pesce.png", UriKind.RelativeOrAbsolute);
+            return new(uri, (100, 500), 5, canvas);
+        }
+        #endregion
+
         #region Metodo per generare un'istanza di un AnimatoSilurante
         /// <summary>
         /// Metodo per generare un'istanza di un AnimatoSilurante
@@ -76,6 +89,7 @@ namespace AcquarioWPF
             acquario.AggiungiPesce(animatoSulPosto(canvasAcquario), 300);
             acquario.AggiungiPesce(animatoSulFondo(canvasAcquario), 30); 
             acquario.AggiungiPesce(animatoInAcqua(canvasAcquario), 30);
+            acquario.AggiungiPesce(animatoInMezzo(canvasAcquario), 30);
             acquario.AggiungiSilurante(animatoSilurante(canvasAcquario), 30);
             #endregion
         }
