@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AcquarioWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920" ResizeMode="NoResize">
+        Title="MainWindow" Height="1080" Width="1920" ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
         <Canvas Name="canvasAcquario" Height="1080" Width="1920">
             <Canvas.Background>
