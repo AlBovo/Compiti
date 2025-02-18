@@ -8,19 +8,26 @@
         <title>Portfolio | Interessi</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Collega il foglio di stile esterno -->
         <link rel="stylesheet" type="text/css" href="./static/style.css">
+        <!-- Imposta l'icona del sito -->
         <link rel="icon" type="image/x-ico" href="./static/logo.png">
     </head>
     <body>
+        <!-- Barra di navigazione con i link alle altre pagine -->
         <nav>
             <ul>
+                <!-- Logo a sinistra -->
                 <li class="logo fl-left"><img src="./static/logo.png" width="48px"></li>
+                <!-- Link di navigazione alle varie sezioni -->
                 <li class="fl-left"><a id="nav" href="./">Home</a></li>
                 <li class="fl-left"><a id="navinteressi" href="./interessi.html">Interessi</a></li>
                 <li class="fl-left"><a id="navhobby" href="./hobby.html">Hobby</a></li>
                 <li class="fl-left"><a id="navscuola" href="./scuola.html">Scuola</a></li>
                 <li class="fl-left"><a id="navlavoro" href="./lavoro.html">Lavoro</a></li>
+                <!-- Nome a destra con link disabilitato -->
                 <li class="fl-right"><a class="noHover" id="nome"><b>ALAN DAVIDE BOVO</b></a></li>
+                <!-- Contatore dei clic e reset -->
                 <li class="fl-right">
                     <button style="width: 100%;" id="counter">Click</button>
                     <button style="width: 100%;" onclick="refresh()">Reset</button>
@@ -28,40 +35,57 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Sezione principale con gli interessi -->
         <div style="padding: 3%; padding-top: 2%">
             <h1 style="color: lightblue;">Interessi</h1>
+
+            <!-- Sezione per l'hobby per la musica -->
             <section class="passione">
-                <img src="/static/musica.jpg" alt="Musica" class="passione-img">
+                <!-- Immagine dell'interesse -->
+                <img src="./static/musica.jpg" alt="Musica" class="passione-img">
                 <div class="container">
+                    <!-- Titolo dell'interesse -->
                     <h3 class="px-2p" style="color: lightblue">Musica</h3>
+                    <!-- Descrizione dell'interesse -->
                     <p>Amo la musica in tutte le sue sfaccettature, dal sound elettronico di Avicii, al rock energico dei Red Hot Chili Peppers, fino alla potenza del rock e i ritmi ipnotici della techno.</p>
                 </div>
             </section>
+            
+            <!-- Sezione per l'hobby per i videogame -->
             <section class="passione">
-                <img src="/static/videogames.png" alt="Videogiochi" class="passione-img">
+                <img src="./static/videogames.png" alt="Videogiochi" class="passione-img">
                 <div class="container">
                     <h3 class="px-2p" style="color: lightblue">Videogiochi</h3>
                     <p>Gioco a titoli di ogni genere, dall'azione agli strategici, dai GDR ai giochi di corse. Ogni videogioco è un'esperienza unica e coinvolgente.</p>
                 </div>  
             </section>
+
+            <!-- Sezione per l'hobby per l'informatica -->
             <section class="passione">
-                <img src="/static/informatica.png" alt="Informatica" class="passione-img">
+                <img src="./static/informatica.png" alt="Informatica" class="passione-img">
                 <div class="container">
                     <h3 class="px-2p" style="color: lightblue">Informatica</h3>
                     <p>La tecnologia è la mia passione, dall'intelligenza artificiale alla cybersecurity, passando per la programmazione e la scoperta di nuovi orizzonti digitali.</p>
                 </div>
             </section>
+
+            <!-- Sezione per l'hobby per il tennis -->
             <section class="passione">
-                <img src="/static/tennis.jpg" alt="Tennis" class="passione-img">
+                <img src="./static/tennis.jpg" alt="Tennis" class="passione-img">
                 <div class="container">
                     <h3 class="px-2p" style="color: lightblue">Tennis</h3>
                     <p>Adoro il tennis, uno sport che combina strategia, tecnica e resistenza fisica. Ogni match è una sfida da affrontare con determinazione.</p>
                 </div>  
             </section>
         </div>
+
+        <!-- Footer con il nome del proprietario del sito -->
         <footer>
             Sito di Alan Davide Bovo
         </footer>
-        <script src="/static/navbar.js"></script>
+
+        <!-- Script esterno per la barra di navigazione -->
+        <script src="./static/navbar.js"></script>
     </body>
 </html>

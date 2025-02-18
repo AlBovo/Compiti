@@ -8,19 +8,26 @@
         <title>Portfolio | Lavoro</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Collega il foglio di stile esterno -->
         <link rel="stylesheet" type="text/css" href="./static/style.css">
+        <!-- Imposta l'icona del sito -->
         <link rel="icon" type="image/x-ico" href="./static/logo.png">
     </head>
     <body>
+        <!-- Barra di navigazione -->
         <nav>
             <ul>
+                <!-- Logo a sinistra -->
                 <li class="logo fl-left"><img src="./static/logo.png" width="48px"></li>
+                <!-- Link di navigazione alla homepage e alle altre sezioni -->
                 <li class="fl-left"><a id="nav" href="./">Home</a></li>
                 <li class="fl-left"><a id="navinteressi" href="./interessi.html">Interessi</a></li>
                 <li class="fl-left"><a id="navhobby" href="./hobby.html">Hobby</a></li>
                 <li class="fl-left"><a id="navscuola" href="./scuola.html">Scuola</a></li>
                 <li class="fl-left"><a id="navlavoro" href="./lavoro.html">Lavoro</a></li>
+                <!-- Nome a destra con link disabilitato -->
                 <li class="fl-right"><a class="noHover" id="nome"><b>ALAN DAVIDE BOVO</b></a></li>
+                <!-- Contatore dei clic e reset -->
                 <li class="fl-right">
                     <button style="width: 100%;" id="counter">Click</button>
                     <button style="width: 100%;" onclick="refresh()">Reset</button>
@@ -28,19 +35,25 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Sezione principale con il contenuto delle esperienze lavorative -->
         <div style="padding: 3%;" class="centered">
             <h1 style="color: lightblue">Esperienze Lavorative</h1>
             <p>
                 Sono molto interessato nell'approfondire tematiche relative alla <b>Cybersecurity</b> e allo sviluppo lato <b>backend</b>.
             </p>
+
+            <!-- Tabella con le esperienze lavorative -->
             <div class="container">
                 <table class="table-lav">
                     <tr class="tr-lav">
+                        <!-- Intestazione della tabella con le informazioni delle esperienze lavorative -->
                         <th class="th-lav">Occupazione</th>
                         <th class="th-lav">Azienda</th>
                         <th class="th-lav">Periodo</th>
                     </tr>
                     <tr class="tr-lav">
+                        <!-- Righe della tabella con le esperienze lavorative -->
                         <td class="td-lav">Junior Cybersecurity Engineer</td>
                         <td class="td-lav"><b>beanTech</b></td>
                         <td class="td-lav"><code>06/2024</code> - <code>09/2024</code></td>
@@ -52,14 +65,22 @@
                     </tr>
                 </table>
             </div>
-            <!-- <div class="container centered">
+
+            <!-- Sezione commentata per un'immagine -->
+            <!--
+            <div class="container centered">
                 <p>Me & the homies</p>
-                <img src="/static/cyberchallenge.jpg" style="width: 50%;">
-            </div> -->
+                <img src="./static/cyberchallenge.jpg" style="width: 50%;">
+            </div>
+            -->
         </div>
+
+        <!-- Footer con il nome del proprietario del sito -->
         <footer>
             Sito di Alan Davide Bovo
         </footer>
-        <script src="/static/navbar.js"></script>
+
+        <!-- Script esterno per la barra di navigazione -->
+        <script src="./static/navbar.js"></script>
     </body>
 </html>

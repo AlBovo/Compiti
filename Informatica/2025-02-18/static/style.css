@@ -1,87 +1,105 @@
 ul {
+    /* Rimuove lo stile di lista predefinito e imposta margini e padding a 0 */
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* Impedisce che gli elementi eccedano dalla lista */
 }
 
 footer {
+    /* Posiziona il footer in modo fisso in basso alla pagina */
     position: fixed;
     left: 0;
-    bottom: 1%;
+    bottom: 1%; /* Aggiunge uno spazio del 1% dal fondo */
     width: 100%;
-    color: rgb(135, 135, 135);
-    text-align: center;
+    color: rgb(135, 135, 135); /* Imposta il colore del testo */
+    text-align: center; /* Allinea il testo al centro */
 }
 
 #nome {
-    color: lightblue
+    /* Colore del testo per l'elemento con id 'nome' */
+    color: lightblue;
 }
 
 .py-5 {
+    /* Imposta un padding verticale di 5px in alto e in basso */
     padding-top: 5px !important;
     padding-bottom: 5px !important;
 }
 
 .px-2p {
+    /* Imposta un padding orizzontale di 2% a sinistra e a destra */
     padding-left: 2% !important;
     padding-right: 2% !important;
 }
 
 li a {
+    /* Stile per i collegamenti nei menu, rendendoli blocchi */
     display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    color: white; /* Colore del testo */
+    text-align: center; /* Allinea il testo al centro */
+    padding: 14px 16px; /* Imposta il padding all'interno dei collegamenti */
+    text-decoration: none; /* Rimuove la sottolineatura */
 }
 
 li a:hover {
+    /* Cambia il colore di sfondo quando si passa sopra il link */
     background-color: #111;
 }
 
 body {
+    /* Imposta lo sfondo scuro e il colore del testo bianco */
     background-color: #333;
     color: white;
-    font-family: sans-serif;
+    font-family: sans-serif; /* Imposta il font sans-serif */
 }
 
 .noHover{
+    /* Disabilita il comportamento hover sugli elementi */
     pointer-events: none;
 }
 
 .active {
+    /* Rende il testo sottolineato e in grassetto per gli elementi attivi */
     text-decoration: underline;
     font-weight: bold;
 }
 
 .centered{
+    /* Centra il contenuto con un padding in alto */
     padding-top: 2%;
     text-align: center;
 }
 
 .left {
+    /* Allinea il testo a sinistra */
     text-align: left;
 }
 
 .logo {
+    /* Aggiunge margini al logo */
     margin-left: 10px; 
     margin-right: 10px;
 }
 
 .fl-left {
+    /* Floats l'elemento a sinistra */
     float: left;
 }
+
 .fl-right {
+    /* Floats l'elemento a destra */
     float: right;
 }
 
 .container {
+    /* Usa il layout Flexbox per centrare il contenuto */
     display: flex;
     justify-content: center;
 }
 
 .passione {
+    /* Stile per il contenitore delle passioni, con un bordo laterale e un bordo arrotondato */
     margin-bottom: 15px;
     padding: 10px;
     border-left: 5px solid lightblue;
@@ -89,52 +107,61 @@ body {
     display: flex;
     align-items: center;
 }
+
 .passione-img {
+    /* Imposta la dimensione e il bordo arrotondato per le immagini nelle passioni */
     width: 80px;
     height: 80px;
     margin-right: 15px;
     border-radius: 5px;
 }
 
-/*
-* Styling della tabella lavorativa
-* La tabella contiene le mie esperienze lavorative a /lavoro
-*/
+/* Styling della tabella lavorativa */
+/* La tabella contiene le esperienze lavorative */
 .table-lav {
+    /* Imposta la tabella per non avere spazi tra le celle */
     border-collapse: collapse;
     width: 50%;
 }
 
 .th-lav, .td-lav {
+    /* Aggiunge padding alle celle della tabella e allinea il testo a sinistra */
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #DDD; /* Aggiunge una linea di separazione tra le righe */
 }
+
 .th-lav {
+    /* Imposta il colore di sfondo per le intestazioni della tabella */
     background-color: #5c5c5c;
 }
 
-.tr-lav:hover {background-color: #5c5c5c;}
+.tr-lav:hover {
+    /* Cambia il colore di sfondo delle righe quando si passa sopra */
+    background-color: #5c5c5c;
+}
 /* Fine dello styling della tabella lavorativa */
 
-/*
-* Styling della tabella scolastica
-* E' possibile vedere la tabella nell'endpoint /scuola
-*/
+/* Styling della tabella scolastica */
+/* Questa tabella è visibile nell'endpoint '/scuola' */
 .table-scuola, .tr-scuola, .td-scuola {
+    /* Aggiunge bordi e imposta la tabella per non avere spazi tra le celle */
     border: 1px solid #DDD;
     border-collapse: collapse;
 }
 
 .th-scuola {
+    /* Colore di sfondo per le intestazioni della tabella scolastica */
     background-color: #5c5c5c;
 }
 
 .td-scuola {
+    /* Aggiunge padding alle celle della tabella scolastica */
     padding: 15px;
 }
 
 .td-scuola:hover {
+    /* Aggiunge un bordo e un effetto hover per le celle scolastiche */
     border: 1px solid #DDD;
     border-collapse: collapse;
 }
