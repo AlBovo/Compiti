@@ -6,8 +6,8 @@ window.onload = () => {
 };
 /* Funzione per controllare se il saldo ha un valore valido */
 function controlla_saldo() {
-    const saldo = window.localStorage["saldo"]; // lettura del saldo dal localstore
-    if (!isFinite(parseInt(saldo))) // il valore non è valido
+    const saldo = parseInt(window.localStorage["saldo"]); // lettura del saldo dal localstore
+    if (!isFinite(saldo)) // il valore non è valido
         ricomincia(); // saldo impostato di default a 50
     if (saldo === 0) // se il saldo è pari a 0
         document.getElementById("ricomincia").removeAttribute("hidden"); // mostro il bottone per ricominciare
