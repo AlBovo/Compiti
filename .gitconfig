@@ -5,3 +5,5 @@
 	email = alandavide.bovo.stud@ispascalcomandini.it
 [core]
 	safecrlf = false
+[credential "http://biagio"]
+	provider = generic
