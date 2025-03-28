@@ -1,0 +1,16 @@
+/*
+ * Alan Davide Bovo 4H 2025-03-21
+ * Sito per convalidazione dati
+ */
+/* imposto la dimensione massima del container e il suo margine */
+.form-container {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+/* imposto il colore e alcuni attributi per il testo di errore */
+.error {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
