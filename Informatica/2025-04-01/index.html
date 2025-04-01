@@ -1,0 +1,77 @@
+<!-- Alan Davide Bovo 4H 2025-03-21 -->
+<!-- Sito per convalidazione dati -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Definizione del set di caratteri UTF-8 -->
+        <meta charset="UTF-8">
+        <!-- Configurazione della viewport per dispositivi mobili -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Titolo della pagina visualizzato nella scheda del browser -->
+        <title>User Registration Form</title>
+        <!-- CSS di Bootstrap 5 per lo styling responsive -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- File CSS personalizzato per eventuali aggiustamenti -->
+        <link href="./static/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Contenitore principale con classe Bootstrap per il layout -->
+        <div class="container form-container">
+            <!-- Card Bootstrap con ombra per contenere il form -->
+            <div class="card shadow">
+                <!-- Corpo della card contenente il form -->
+                <div class="card-body">
+                    <!-- Titolo della card centrato con margine inferiore -->
+                    <h2 class="card-title text-center mb-4">User Registration</h2>
+                    
+                    <!-- Form principale con attributi HTML5 per la validazione -->
+                    <form id="loginForm" class="needs-validation" novalidate>
+                        <!-- Gruppo di campi per il nome -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <!-- Gruppo di campi per il cognome -->
+                        <div class="mb-3">
+                            <label for="surname" class="form-label">Surname</label>
+                            <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter your surname" required>
+                        </div>
+                        <!-- Gruppo di campi per la data di nascita -->
+                        <div class="mb-3">
+                            <label for="birthdate" class="form-label">Birthdate</label>
+                            <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                        </div>
+                        <!-- Gruppo di campi per lo username -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
+                        </div>
+                        <!-- Gruppo di campi per l'email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <!-- Gruppo di campi per la password -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required>
+                        </div>
+                        <!-- Bottone di invio con stile Bootstrap -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Libreria jQuery necessaria per Bootstrap e la validazione -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Bundle JavaScript di Bootstrap per componenti interattivi -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Plugin jQuery Validation per la validazione del form -->
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <!-- File JavaScript personalizzato contenente le regole di validazione -->
+        <script src="./static/script.js"></script>
+    </body>
+</html>
