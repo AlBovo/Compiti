@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gioco di scommesse</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+
+    <body>
+        <div class="d-flex align-items-center py-4">
+            <main class="m-auto">
+                <h1>Gioco di scommesse</h1>
+                <p class="pb-2">Hai <b id="saldo"></b> di saldo</p>
+                <form action="javascript:gioca()">
+                    <div class="form-floating my-3">
+                        <input type="number" class="form-control" id="scommessa" placeholder="10">
+                        <label for="scommessa">Scommessa</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" max="12" min="1" class="form-control" id="numero" placeholder="3">
+                        <label for="numero">Numero da indovinare</label>
+                    </div>
+
+                    <div class="w-auto d-flex justify-content-center my-3">
+                        <input type="submit" class="btn btn-primary me-2">
+                        <input type="submit" formaction="javascript:ricomincia()" id="ricomincia" hidden class="btn btn-danger ms-2"  value="Ricomincia">
+                    </div>
+                </form>
+            </main>
+        </div>
+        <div class="py-4">
+            <div class="d-flex justify-content-center">
+                <h1 class="me-3">Dadi</h1>
+                <h1 class="bi bi-dice-1 mx-2"></h1>
+                <h1 class="bi bi-dice-2 mx-2"></h1>
+                <h1 class="bi bi-dice-3 mx-2"></h1>
+                <h1 class="bi bi-dice-4 mx-2"></h1>
+                <h1 class="bi bi-dice-5 mx-2"></h1>
+                <h1 class="bi bi-dice-6 mx-2"></h1>
+            </div>
+            <div id="giocata" class="d-flex justify-content-center">
+                <h1 class="me-3">Giocata</h1>
+            </div>
+        </div>
+        <script>
+            function controlla_saldo() {
+                const saldo = window.localStorage["saldo"];
+                if (parseInt(saldo) === NaN) { // fix this
+                    window.localStorage["saldo"] = 50;
+                }
+                if (saldo <= 0) {
+                    document.getElementById("ricomincia").removeAttribute("hidden");
+                }
+            }
+            function ricomincia() {
+                window.localStorage["saldo"] = 50;
+                window.location.reload();
+            }
+            window.onload = () => {
+                controlla_saldo();
+                document.getElementById("saldo").innerText = `${window.localStorage["saldo"]}€`;
+                controlla_saldo();
+            };
+            function gioca(){
+                const scommessa = document.getElementById("scommessa");
+                const numero = document.getElementById("numero");
+                
+                const s = parseInt(scommessa.value);
+                const n = parseInt(numero.value);
+                
+                if (n === NaN || n < 1 || n > 12) {
+                    alert("Il numero inserito non è nel range [1; 12]");
+                    return;
+                }
+                controlla_saldo();
+                let saldo = parseInt(window.localStorage["saldo"]);
+                if (s === NaN || s > saldo || s < 0) {
+                    alert("La scommessa non è valida, riprova");
+                    return;
+                }
+                
+                const dado1 = Math.floor(Math.random()*6) + 1;
+                const dado2 = Math.floor(Math.random()*6) + 1;
+
+                if (dado1 + dado2 === n) {
+                    saldo += s;
+                    alert("Hai vinto complimenti!");
+                }
+                else {
+                    saldo -= s;
+                }
+
+                window.localStorage["saldo"] = saldo;
+                document.getElementById("saldo").innerText = `${saldo}€`;
+
+                const giocata = document.getElementById("giocata");
+                if (giocata.children.length > 1) {
+                    for (let i = 0; i < 2; i++)
+                        giocata.removeChild(giocata.lastChild);
+                }
+
+                giocata.innerHTML += `<h1 class="bi bi-dice-${dado1} mx-2"></h1>`
+                giocata.innerHTML += `<h1 class="bi bi-dice-${dado2} mx-2"></h1>`
+
+                controlla_saldo();
+            }
+        </script>
+    </body>
+</html>

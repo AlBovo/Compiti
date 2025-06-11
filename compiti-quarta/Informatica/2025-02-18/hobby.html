@@ -1,0 +1,71 @@
+<!-- Alan Davide Bovo 4H 2025-01-17         -->
+<!-- Pagina hobby del portfolio personale   -->
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portfolio | Hobby</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Collega il foglio di stile esterno -->
+        <link rel="stylesheet" type="text/css" href="./static/style.css">
+        <!-- Imposta l'icona del sito -->
+        <link rel="icon" type="image/x-ico" href="./static/logo.png">
+    </head>
+    <body>
+        <!-- Barra di navigazione con i link alle altre pagine -->
+        <nav>
+            <ul>
+                <!-- Logo a sinistra -->
+                <li class="logo fl-left"><img src="./static/logo.png" width="48px"></li>
+                <!-- Link di navigazione alle varie sezioni -->
+                <li class="fl-left"><a id="nav" href="./">Home</a></li>
+                <li class="fl-left"><a id="navinteressi" href="./interessi.html">Interessi</a></li>
+                <li class="fl-left"><a id="navhobby" href="./hobby.html">Hobby</a></li>
+                <li class="fl-left"><a id="navscuola" href="./scuola.html">Scuola</a></li>
+                <li class="fl-left"><a id="navlavoro" href="./lavoro.html">Lavoro</a></li>
+                <!-- Nome a destra con link disabilitato -->
+                <li class="fl-right"><a class="noHover"><b>ALAN DAVIDE BOVO</b></a></li>
+                <!-- Contatore dei clic e reset -->
+                <li class="fl-right">
+                    <button style="width: 100%;" id="counter">Click</button>
+                    <button style="width: 100%;" onclick="refresh()">Reset</button>
+                    <a class="noHover" id="countern">0</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sezione principale con gli hobby e passioni -->
+        <div style="padding: 3%" class="centered">
+            <h1>Hobby e Passioni</h1>
+            <p style="padding-left: 2%;" class="left">
+                Sono appassionato di diverse materie tra cui
+                <ul style="list-style-type: circle; padding-left: 6%;" class="left">
+                    <!-- Primo hobby: Cybersecurity -->
+                    <li>
+                        <b>Cybersecurity 🛡️</b>: 
+                        <p>
+                            Ho ricevuto diversi premi alle Olicyber (2 volte medaglia d'argento) e a Cyberchallenge 2024
+                        </p>
+                    </li>
+                    <!-- Secondo hobby: Competitive Programming -->
+                    <li>
+                        <b>Competitive Programming 💻</b>: 
+                        <p>
+                            Ho partecipato a diverse finali nazionali delle OII e delle OIS
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Footer con il nome del proprietario del sito -->
+        <footer>
+            Sito di Alan Davide Bovo
+        </footer>
+
+        <!-- Script esterno per la barra di navigazione -->
+        <script src="./static/navbar.js"></script>
+    </body>
+</html>

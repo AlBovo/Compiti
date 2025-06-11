@@ -1,0 +1,122 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 1%;
+    width: 100%;
+    color: rgb(135, 135, 135);
+    text-align: center;
+}
+
+.py-5 {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.px-2p {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+}
+
+.noHover{
+    pointer-events: none;
+}
+
+.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.centered{
+    padding-top: 2%;
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.logo {
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+.fl-left {
+    float: left;
+}
+.fl-right {
+    float: right;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/*
+* Styling della tabella lavorativa
+* La tabella contiene le mie esperienze lavorative a /lavoro
+*/
+.table-lav {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.th-lav, .td-lav {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+}
+.th-lav {
+    background-color: #5c5c5c;
+}
+
+.tr-lav:hover {background-color: #5c5c5c;}
+/* Fine dello styling della tabella lavorativa */
+
+/*
+* Styling della tabella scolastica
+* E' possibile vedere la tabella nell'endpoint /scuola
+*/
+.table-scuola, .tr-scuola, .td-scuola {
+    border: 1px solid #DDD;
+    border-collapse: collapse;
+}
+
+.th-scuola {
+    background-color: #5c5c5c;
+}
+
+.td-scuola {
+    padding: 15px;
+}
+
+.td-scuola:hover {
+    border: 1px solid #DDD;
+    border-collapse: collapse;
+}
+/* Fine dello styling della tabella scolastica */

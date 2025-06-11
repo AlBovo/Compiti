@@ -1,0 +1,56 @@
+/* Set the height of both the html and body elements to 100% to make the page full height */
+html, body {
+  height: 100%;
+}
+
+/* Style for the body element */
+body {
+  /* Use Flexbox to center content horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Add padding at the top and bottom of the body */
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  /* Set a light gray background color for the page */
+  background-color: #f5f5f5;
+}
+
+/* Style for the form with class 'form-signin' */
+.form-signin {
+  /* Set the form's width to 100% but limit its maximum width to 330px */
+  width: 100%;
+  max-width: 330px;
+
+  /* Add padding inside the form */
+  padding: 15px;
+
+  /* Center the form horizontally */
+  margin: 0 auto;
+}
+
+/* Style for the checkbox inside the form */
+.form-signin .checkbox {
+  /* Set font weight for the checkbox label */
+  font-weight: 400;
+}
+
+/* Style for the input fields with the class 'form-control' inside the form */
+.form-signin .form-control {
+  /* Set position to relative for future positioning of elements (if needed) */
+  position: relative;
+
+  /* Ensure padding and border-box are included in the element's size */
+  box-sizing: border-box;
+
+  /* Set height to auto for flexibility */
+  height: auto;
+
+  /* Add padding inside the input fields for better spacing */
+  padding: 10px;
+
+  /* Set the font size for the text inside the input fields */
+  font-size: 16px;
+}

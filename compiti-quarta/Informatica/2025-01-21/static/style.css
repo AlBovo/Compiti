@@ -1,0 +1,58 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+}
+
+.noHover{
+    pointer-events: none;
+}
+
+.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.centered{
+    padding-top: 2%;
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.table-lav {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.th-lav, .td-lav {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+}
+.th-lav {
+    background-color: #5c5c5c;
+}
+
+.tr-lav:hover {background-color: #5c5c5c;}

@@ -1,0 +1,120 @@
+<!-- Alan Davide Bovo 4H 2025-01-17         -->
+<!-- Pagina scuola del portfolio personale  -->
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portfolio | Scuola</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Collega il foglio di stile esterno -->
+        <link rel="stylesheet" type="text/css" href="./static/style.css">
+        <!-- Imposta l'icona del sito -->
+        <link rel="icon" type="image/x-ico" href="./static/logo.png">
+    </head>
+    <body>
+        <!-- Barra di navigazione -->
+        <nav>
+            <ul>
+                <!-- Logo a sinistra -->
+                <li class="logo fl-left"><img src="./static/logo.png" width="48px"></li>
+                <!-- Link di navigazione alla homepage e alle altre sezioni -->
+                <li class="fl-left"><a id="nav" href="./">Home</a></li>
+                <li class="fl-left"><a id="navinteressi" href="./interessi.html">Interessi</a></li>
+                <li class="fl-left"><a id="navhobby" href="./hobby.html">Hobby</a></li>
+                <li class="fl-left"><a id="navscuola" href="./scuola.html">Scuola</a></li>
+                <li class="fl-left"><a id="navlavoro" href="./lavoro.html">Lavoro</a></li>
+                <!-- Nome a destra con link disabilitato -->
+                <li class="fl-right"><a class="noHover" id="nome"><b>ALAN DAVIDE BOVO</b></a></li>
+                <!-- Contatore dei clic e reset -->
+                <li class="fl-right">
+                    <button style="width: 100%;" id="counter">Click</button>
+                    <button style="width: 100%;" onclick="refresh()">Reset</button>
+                    <a class="noHover" id="countern">0</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sezione principale con il contenuto dell'orario scolastico -->
+        <div style="padding: 3%" class="centered">
+            <h1 style="color: lightblue">Orario scolastico e Materie</h1>
+            <p class="py-5">
+                Presso l'<b>IS Pascal Comandini</b> le materie studiate affrontano un'ampia gamma di tematiche
+                dalle materie obbligatorie come <i>Italiano</i> e <i>Storia</i> fino a materie come <i>TPSIT</i>, <i>Sistemi e Reti</i> e <i>Informatica</i>.
+            </p>
+
+            <!-- Tabella con l'orario scolastico -->
+            <div class="container">
+                <table class="table-scuola centered">
+                    <tr class="tr-scuola">
+                        <!-- Intestazione della tabella con le ore e i giorni della settimana -->
+                        <th class="th-scuola">Ora</th>
+                        <th class="th-scuola">Lunedì</th>
+                        <th class="th-scuola">Martedì</th>
+                        <th class="th-scuola">Mercoledì</th>
+                        <th class="th-scuola">Giovedì</th>
+                        <th class="th-scuola">Venerdì</th>
+                        <th class="th-scuola">Sabato</th>
+                    </tr>
+
+                    <!-- Righe dell'orario con le materie -->
+                    <tr class="tr-scuola">
+                        <td class="td-scuola"><code>8:00-9:00</code></td>
+                        <td class="td-scuola" rowspan="2">TP-SIT</td>
+                        <td class="td-scuola" rowspan="2">Telecomunicazioni</td>
+                        <td class="td-scuola" rowspan="2">Lettere</td>
+                        <td class="td-scuola" rowspan="2">Storia</td>
+                        <td class="td-scuola"></td>
+                        <td class="td-scuola">Lettere</td>
+                    </tr>
+                    <tr class="tr-scuola">
+                        <td class="td-scuola"><code>9:00-10:00</code></td>
+                        <td class="td-scuola" rowspan="2">Informatica</td>
+                        <td class="td-scuola" rowspan="2">Sistemi e Reti</td>
+                    </tr>
+                    <tr class="tr-scuola">
+                        <td class="td-scuola"><code>10:00-11:00</code></td>
+                        <td class="td-scuola">Sistemi e Reti</td>
+                        <td class="td-scuola">Matematica</td>
+                        <td class="td-scuola">Matematica</td>
+                        <td class="td-scuola" rowspan="2">Ginnastica</td>
+                    </tr>
+                    <tr class="tr-scuola">
+                        <td class="td-scuola"><code>11:00-12:00</code></td>
+                        <td class="td-scuola">Telecomunicazioni</td>
+                        <td class="td-scuola">Informatica</td>
+                        <td class="td-scuola" rowspan="2">Informatica</td>
+                        <td class="td-scuola">Inglese</td>
+                        <td class="td-scuola">Informatica</td>
+                    </tr>
+                    <tr class="tr-scuola">
+                        <td class="td-scuola"><code>12:00-13:00</code></td>
+                        <td class="td-scuola">Matematica</td>
+                        <td class="td-scuola">Inglese</td>
+                        <td class="td-scuola">Inglese</td>
+                        <td class="td-scuola">Lettere</td>
+                        <td class="td-scuola">TP-SIT</td>
+                    </tr>
+                    <tr class="tr-scuola">
+                        <td class="td-scuola"><code>13:00-14:00</code></td>
+                        <td class="td-scuola"></td>
+                        <td class="td-scuola">Sistemi e Reti</td>
+                        <td class="td-scuola"></td>
+                        <td class="td-scuola">Matematica</td>
+                        <td class="td-scuola">Religione</td>
+                        <td class="td-scuola"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer con il nome del proprietario del sito -->
+        <footer>
+            Sito di Alan Davide Bovo
+        </footer>
+
+        <!-- Script esterno per la barra di navigazione -->
+        <script src="./static/navbar.js"></script>
+    </body>
+</html>

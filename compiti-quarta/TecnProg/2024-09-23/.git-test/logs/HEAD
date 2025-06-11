@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 670d03000a36212f7242849e3d88c4889ec9581b Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727074324 +0200	commit (initial): aggiunto testo della prima lezione
+670d03000a36212f7242849e3d88c4889ec9581b 13314015f5833c7877a51efd807076d5411edb8e Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727074969 +0200	commit: aggiunta di riga di modifiche
+13314015f5833c7877a51efd807076d5411edb8e 13314015f5833c7877a51efd807076d5411edb8e git stash <alandavide.bovo.stud@ispascalcomandini.it> 1727075494 +0200	reset: moving to HEAD
+13314015f5833c7877a51efd807076d5411edb8e 13314015f5833c7877a51efd807076d5411edb8e Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727075601 +0200	checkout: moving from master to 13314015f5833c7877a51efd807076d5411edb8e
+13314015f5833c7877a51efd807076d5411edb8e 13314015f5833c7877a51efd807076d5411edb8e Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727075676 +0200	checkout: moving from 13314015f5833c7877a51efd807076d5411edb8e to master
+13314015f5833c7877a51efd807076d5411edb8e 670d03000a36212f7242849e3d88c4889ec9581b Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727075693 +0200	checkout: moving from master to 670d03000a36212f7242849e3d88c4889ec9581b
+670d03000a36212f7242849e3d88c4889ec9581b 652bc34096a11baef491613fa193dfe50fbe7553 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727075763 +0200	commit: commit di prova aggiunto ora
+652bc34096a11baef491613fa193dfe50fbe7553 13314015f5833c7877a51efd807076d5411edb8e Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727075782 +0200	checkout: moving from 652bc34096a11baef491613fa193dfe50fbe7553 to master
+13314015f5833c7877a51efd807076d5411edb8e 0000000000000000000000000000000000000000 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727076045 +0200	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 13314015f5833c7877a51efd807076d5411edb8e Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727076045 +0200	Branch: renamed refs/heads/master to refs/heads/main
+13314015f5833c7877a51efd807076d5411edb8e 0000000000000000000000000000000000000000 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727076099 +0200	Branch: renamed refs/heads/main to refs/heads/main
+13314015f5833c7877a51efd807076d5411edb8e 13314015f5833c7877a51efd807076d5411edb8e Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727076099 +0200	Branch: renamed refs/heads/main to refs/heads/main

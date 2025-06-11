@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680183 +0200	commit (initial): aggiunta la prima frase
+6e4109070566c3a6a414f578c448aa0bfb06f674 8d44d73c2f8912ae3c829a1193bba136750da1c0 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680223 +0200	commit: aggiunta la seconda frase
+8d44d73c2f8912ae3c829a1193bba136750da1c0 6e4109070566c3a6a414f578c448aa0bfb06f674 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680303 +0200	reset: moving to HEAD~1
+6e4109070566c3a6a414f578c448aa0bfb06f674 d0df077e7e30a50cd4cbdc5444bc830c5a019c96 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727680727 +0200	merge lombardi: Fast-forward
+d0df077e7e30a50cd4cbdc5444bc830c5a019c96 b0b515a58ffab7d1330c27d5dc904b32b836a303 Alan Davide Bovo <alandavide.bovo.stud@ispascalcomandini.it> 1727681479 +0200	commit (merge): riparato il merge conflict con il branch lucchi
