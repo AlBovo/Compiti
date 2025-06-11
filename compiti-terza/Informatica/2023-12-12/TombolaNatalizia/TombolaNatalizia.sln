@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TombolaNatalizia", "TombolaNatalizia\TombolaNatalizia.csproj", "{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TombolaNataliziaAvanzata", "TombolaNataliziaAvanzata\TombolaNataliziaAvanzata.csproj", "{A5D8073D-E31B-4863-996C-2EA836168B3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00217DED-DCFA-46AF-BF44-D07C2DD9AE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D8073D-E31B-4863-996C-2EA836168B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D8073D-E31B-4863-996C-2EA836168B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D8073D-E31B-4863-996C-2EA836168B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D8073D-E31B-4863-996C-2EA836168B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B0F1258-B547-4FB2-B14D-40FE89F1DF86}
+	EndGlobalSection
+EndGlobal
